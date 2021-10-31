@@ -40,12 +40,9 @@ public:
 
 	void CreateProduct() 
 	{
-		cout << "\t\t\t\tCreate pproduct" << endl << endl;
-		//cout << "\t\t\t\tEnter product No : ";
-		//cin >> ProductNo;//might need sorting by No
+		cout << "\t\t\t\tCreate product : Note (do NOT use space for product name use \"_\" instead)" << endl << endl;
 		cout << "\t\t\t\tEnter product name : ";
-		cin.ignore();;
-		getline(cin,ProductName);
+		cin >> ProductName;
 		cout << "\t\t\t\tEnter product price : $";
 		cin >> Price;
 		cout << "\t\t\t\tEnter product quantity : ";
@@ -74,9 +71,9 @@ public:
 	void DisplayProduct()
 	{
 		
-		cout << "==================================================================================" << endl;
-		cout << "|| " << ProductNo << "\t|| " << ProductName << "\t\t||$" << Price << "\t\t|| " << Quantity << "\t\t|| " << Discount << "%\t\t||" << endl;
-		cout << "==================================================================================" << endl;
+		cout << "==================================================================================================" << endl;
+		cout << "|| " << ProductNo << "\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t\t|| " << Quantity << "pcs\t\t\t|| " << Discount << "%\t\t||" << endl;
+		cout << "==================================================================================================" << endl;
 	}
 
 

@@ -97,12 +97,12 @@ public:
 					manager.DisplayManager();
 				}
 			}
-			else
+			if (role == "cashier")
 			{
 				fin.read(reinterpret_cast<char*>(&cashier), sizeof(Cashier));
 				if (fin.eof()) { break; }
 
-				if (cashier.role != role)
+				if (cashier.role == role)
 				{
 					cashier.DisplayCashier();
 				}

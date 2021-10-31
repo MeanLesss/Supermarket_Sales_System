@@ -42,7 +42,7 @@ public:
 				break;
 			case '2':
 				system("cls");
-				account.CreateUser();
+				account.CreateUser(1);
 				service.SignUp(account);
 				break;
 			case '3':

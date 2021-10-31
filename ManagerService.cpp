@@ -32,8 +32,8 @@ public:
 			break;
 		case '2':
 			system("cls");
-			cout << "==================================================================================" << endl;
-			cout << "|| No\t|| product name\t\t||price\t\t|| quantity\t|| Discount\t||" << endl;
+			cout << "======================================================================================================" << endl;
+			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
 			service.LoadFromProduct();
 			//product.ShowProduct();
 			system("pause");
@@ -54,7 +54,7 @@ public:
 			break;
 		case '5':
 			system("cls");
-			account.CreateUser();
+			account.CreateUser(2);// 2 is for cashier
 			service.SignUp(account);
 			system("pause");
 

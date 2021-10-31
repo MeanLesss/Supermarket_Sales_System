@@ -21,7 +21,7 @@ public:
 	char role[20];
 
 	Manager() :ManagerName("unknown"), ManagerPass("unknown"), role("Manager") {}
-	Manager(char ManagerName[],char ManagerPass[])
+	Manager(char ManagerName[],char ManagerPass[]):role("manager")
 	{
 		memcpy(this->ManagerName, ManagerName, 20);
 		memcpy(this->ManagerPass, ManagerPass, 20);
@@ -36,7 +36,7 @@ public:
 	}
 	~Manager() {}
 
-	void CreateManager() 
+	/*void CreateManager() 
 	{
 		cout << "\t\t\t\tEnter username : ";
 		cin >> ManagerName;
@@ -45,7 +45,7 @@ public:
 		cout << "\t\t\t\tEnter role : ";
 		cin >> role;
 
-	}
+	}*/
 
 	//Control cashier
 	void AddCashierAcc() 

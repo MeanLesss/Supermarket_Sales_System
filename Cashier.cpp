@@ -14,8 +14,8 @@ private:
 	
 public:
 	char role[20];
-	Cashier() :CashierName("unknown"), CashierPass("unknown"), role("Cashier") {}
-	Cashier(char CashierName[], char CashierPass[])
+	Cashier() :CashierName("unknown"), CashierPass("unknown"), role("cashier") {}
+	Cashier(char CashierName[], char CashierPass[]):role("cashier")
 	{
 		memcpy(this->CashierName, CashierName, 20);
 		memcpy(this->CashierPass, CashierPass, 20);
@@ -27,7 +27,7 @@ public:
 		memcpy(this->role, role, 20);
 	}
 
-	void CreateCashier()
+	/*void CreateCashier()
 	{
 		cout << "\t\t\t\tEnter username : ";
 		cin >> CashierName;
@@ -35,7 +35,7 @@ public:
 		cin >> CashierPass;
 		cout << "\t\t\t\tEnter role : ";
 		cin >> role;
-	}
+	}*/
 	void SearchCashier()
 	{
 
@@ -54,7 +54,7 @@ public:
 
 	void AddProdToCart()
 	{
-
+		  
 
 		//service.SaveReportFile(/*need a parameter*/);
 	}
