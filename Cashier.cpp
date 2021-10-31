@@ -1,30 +1,40 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include<fstream>
-//#include"Product.cpp"
-//#include"Account.cpp"
 using namespace std;
 
 class Cashier
 {
 private:
-	string CashierName;
+	/*string CashierName;
 	string CashierPass;
-	string role;
+	string role;*/
+	char CashierName[20];
+	char CashierPass[20];
 	
 public:
-	Cashier() :CashierName("unknown"), CashierPass("unknown"), role("unknown") {}
-	Cashier(string CashierName, string CashierPass) :CashierName(CashierName), CashierPass(CashierPass) {}
-	Cashier(string CashierName,string CashierPass,string role) :CashierName(CashierName), CashierPass(CashierPass), role(role) {}
+	char role[20];
+	Cashier() :CashierName("unknown"), CashierPass("unknown"), role("Cashier") {}
+	Cashier(char CashierName[], char CashierPass[])
+	{
+		memcpy(this->CashierName, CashierName, 20);
+		memcpy(this->CashierPass, CashierPass, 20);
+	}
+	Cashier(char CashierName[],char CashierPass[],char role[])
+	{
+		memcpy(this->CashierName, CashierName, 20);
+		memcpy(this->CashierPass, CashierPass, 20);
+		memcpy(this->role, role, 20);
+	}
+
 	void CreateCashier()
 	{
 		cout << "\t\t\t\tEnter username : ";
-		cin.ignore();
-		getline(cin, CashierName);
+		cin >> CashierName;
 		cout << "\t\t\t\tEnter password : ";
-		getline(cin, CashierPass);
-		role = "cashier";
+		cin >> CashierPass;
+		cout << "\t\t\t\tEnter role : ";
+		cin >> role;
 	}
 	void SearchCashier()
 	{

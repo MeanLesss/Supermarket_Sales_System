@@ -33,7 +33,7 @@
     <ClCompile Include="CashierCounter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Account.cpp">
+    <ClCompile Include="AccountUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
@@ -54,17 +54,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="report.bin">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="cashier.bin">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="manager.bin">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="product.bin">
-      <Filter>Source Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

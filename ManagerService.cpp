@@ -4,10 +4,12 @@
 #include"Product.cpp"
 #include"Cashier.cpp"
 #include"Menu.cpp"
+#include"AccountUser.cpp"
 
 class ManagerService
 {
 private:
+	AccountUser account;
 	Manager manager;
 	Service service;
 	Menu menu;
@@ -30,7 +32,10 @@ public:
 			break;
 		case '2':
 			system("cls");
-			product.ShowProduct();
+			cout << "==================================================================================" << endl;
+			cout << "|| No\t|| product name\t\t||price\t\t|| quantity\t|| Discount\t||" << endl;
+			service.LoadFromProduct();
+			//product.ShowProduct();
 			system("pause");
 			break;
 		case '3':
@@ -49,8 +54,8 @@ public:
 			break;
 		case '5':
 			system("cls");
-			cashier.CreateCashier();
-			service.SaveToCashier(cashier);
+			account.CreateUser();
+			service.SignUp(account);
 			system("pause");
 
 			break;
@@ -70,12 +75,12 @@ public:
 			break;
 		case '8':
 			system("cls");
-			service.LoadFromCashier(cashier);
+			service.LoadFromUser("cashier");
 			system("pause");
 
 			break;
 		case '9':
-			_exit;
+			exit(1);
 			break;
 		}
 	}

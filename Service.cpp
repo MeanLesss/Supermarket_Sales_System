@@ -5,26 +5,30 @@
 #include"Cashier.cpp"
 #include"Manager.cpp"
 #include"Product.cpp"
+#include"AccountUser.cpp"
 using namespace std;
-
+const char USER_FILE[] = "user.dat";
+const char PRODUCT_FILE[] = "product.dat";
+const char REPORT_FILE[] = "report.dat";
 
 class Service 
 {
 private:
-	
+
+	Manager manager;
+	Cashier cashier;
+	Product product;
+
 	string UserName;
 	string PassWord;
-	const string CASHIER_FILE = "cashier.bin";
-	const string MANAGER_FILE = "manager.bin";
-	const string PRODUCT_FILE = "product.bin";
-	const string REPORT_FILE = "report.bin";
+	
 
 public:
 
 	Service() :UserName("unknown"), PassWord("unknown") { }
 	Service(string UserName) : UserName(UserName) { }
 	Service(string UserName, string PassWord) :UserName(UserName), PassWord(PassWord) { }
-	~Service() { }
+	
 
 	
 	
@@ -39,83 +43,74 @@ public:
 			cerr << "File open failed";
 			exit(1);
 		}
-		fout.write((char*)&product, sizeof(Product));
-		fout << endl;
+		fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
 		fout.close();
 	}
 
 	void LoadFromProduct()
 	{
-		Product product;
+		int count = 0;
 		ifstream fin;
 		fin.open(PRODUCT_FILE, ios::in | ios::binary);
-		while (!fin.read((char*)&product, sizeof(Product)))
+		
+		while (1)
 		{
-			fin.seekg(0);
+			count++;
+			fin.read(reinterpret_cast<char*>(&product), sizeof(Product));
+			product.ProductNo = count;
+			if (fin.eof()) { break; }
 			product.DisplayProduct();
-			cout << endl;
 		}
 
 		fin.close();
 	}
 
 	//Manager file in out
-	void SignUp(Manager& manager)//add admin
+	void SignUp(AccountUser& account)//add admin
 	{
 		ofstream fout;
-		fout.open(MANAGER_FILE, ios::out | ios::app | ios::binary);
+		fout.open(USER_FILE, ios::out | ios::app | ios::binary);
 		if (!fout) {
 			// throw FileNotFoundException("File open failed");
 			cerr << "File open failed";
 			exit(1);
 		}
-		fout.write(reinterpret_cast<char*>(&manager), sizeof(Manager));
+		fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
 		fout.close();
 	}
 
 	
-	void LoadFromManager()
+	void LoadFromUser(string role)
 	{
-		int count = 0;
-		Manager manager;
+		
 		ifstream fin;
-		fin.open(MANAGER_FILE, ios::in | ios::binary);
+		fin.open(USER_FILE, ios::in | ios::binary);
 		//fin.read(reinterpret_cast<char*>(&manager), sizeof(Manager))
-		while (fin.read((char*)&manager, sizeof(Manager)))
+		while (1)
 		{
-			manager.DisplayManager();
-			cout << endl;
+			if (role == "manager") 
+			{
+				fin.read(reinterpret_cast<char*>(&manager), sizeof(Manager));
+				if (fin.eof()) { break; }
+				if(manager.role == role)
+				{
+					manager.DisplayManager();
+				}
+			}
+			else
+			{
+				fin.read(reinterpret_cast<char*>(&cashier), sizeof(Cashier));
+				if (fin.eof()) { break; }
+
+				if (cashier.role != role)
+				{
+					cashier.DisplayCashier();
+				}
+			}
 		}
 		fin.close();
+		
 	}
-
-	//Cashier file in out
-	void SaveToCashier(Cashier& cashier)
-	{
-		ofstream fout;
-		fout.open(CASHIER_FILE, ios::out | ios::app | ios::binary);
-		if (!fout) {
-			// throw FileNotFoundException("File open failed");
-			cerr << "File open failed";
-			exit(1);
-		}
-		fout.write((char*)&cashier, sizeof(Cashier));
-		fout << endl;
-		fout.close();
-	}
-	void LoadFromCashier(Cashier & cashier)
-	{
-		ifstream fin;
-		fin.open(CASHIER_FILE, ios::in | ios::binary);
-		while (!fin.read((char*)&cashier, sizeof(Cashier)))
-		{
-			cashier.DisplayCashier();
-			cout << endl;
-		}
-
-		fin.close();
-	}
-
 
 	// Load report of each cashier 
 	void SaveReportFile()

@@ -10,16 +10,19 @@ using namespace std;
 class Product
 {
 private:
+	//char ProductName[20];
 	string ProductName;
-	int ProductNo;
 	float Price;
 	float Quantity;
 	float Discount;
 
 public:
+	int ProductNo;
+
 	Product() :ProductName("unknown"), ProductNo(0), Price(0), Quantity(0), Discount(0){ }
 	Product(string ProductName,int ProductNo,float Price,float Quantity) 
 	{
+		//memcpy(this->ProductName, ProductName,20);
 		this->ProductName = ProductName;
 		this->ProductNo = ProductNo;
 		this->Price = Price;
@@ -27,6 +30,7 @@ public:
 	}
 	Product(string ProductName, int ProductNo, float Price, float Quantity, float Discount) 
 	{
+		//memcpy(this->ProductName, ProductName, 20);
 		this->ProductName = ProductName;
 		this->ProductNo = ProductNo;
 		this->Price = Price;
@@ -36,11 +40,11 @@ public:
 
 	void CreateProduct() 
 	{
-		cout << "\t\t\t\tCreate pproduct" << endl;
-		cout << "\t\t\t\tEnter product No : ";
-		cin >> ProductNo;//might need sorting by No
+		cout << "\t\t\t\tCreate pproduct" << endl << endl;
+		//cout << "\t\t\t\tEnter product No : ";
+		//cin >> ProductNo;//might need sorting by No
 		cout << "\t\t\t\tEnter product name : ";
-		cin.ignore();
+		cin.ignore();;
 		getline(cin,ProductName);
 		cout << "\t\t\t\tEnter product price : $";
 		cin >> Price;
@@ -69,8 +73,7 @@ public:
 	}
 	void DisplayProduct()
 	{
-		cout << "==================================================================================" << endl;
-		cout << "|| No\t|| product name\t\t||price\t\t|| quantity\t|| Discount\t||" << endl;
+		
 		cout << "==================================================================================" << endl;
 		cout << "|| " << ProductNo << "\t|| " << ProductName << "\t\t||$" << Price << "\t\t|| " << Quantity << "\t\t|| " << Discount << "%\t\t||" << endl;
 		cout << "==================================================================================" << endl;

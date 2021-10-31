@@ -6,8 +6,8 @@ class CashierService
 private:
 
 public:
-	CashierService();
-	~CashierService();
+	CashierService() {}
+	~CashierService() {}
 
 
 };

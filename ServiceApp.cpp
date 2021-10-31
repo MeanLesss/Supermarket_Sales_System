@@ -2,6 +2,7 @@
 #include"Service.cpp"
 #include"Menu.cpp"
 #include"ManagerService.cpp"
+#include"AccountUser.cpp"
 
 class ServiceApp
 {
@@ -10,6 +11,7 @@ private:
 	ManagerService ManService;
 	Menu menu;
 	Service service;
+	AccountUser account;
 
 	char loginmenu;
 
@@ -40,19 +42,20 @@ public:
 				break;
 			case '2':
 				system("cls");
-				manager.CreateManager();
-				service.SignUp(manager);
+				account.CreateUser();
+				service.SignUp(account);
 				break;
 			case '3':
 				system("cls");
 
-				service.LoadFromManager();
+				service.LoadFromUser("manager");
+				//manager.DisplayManager(manager);
 				
 				system("pause");
 				break;
 
 			case '4':
-				exit;
+				exit(1);
 				break;
 			}
 		} while (loginmenu != '4');

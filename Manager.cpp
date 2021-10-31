@@ -1,36 +1,50 @@
 #pragma once
 #include<iostream>
-#include<fstream>
 #include<string>
 
 using namespace std;
+
 
 class Manager 
 {
 private:
 	//ID maybe later
-	string ManagerName;
+	/*string ManagerName;
 	string ManagerPass;
-	string role;
+	string role;*/
+	char ManagerName[20];
+	char ManagerPass[20];
 	//Service service;
-	const string MANAGER_FILE = "manager.bin";
 
 
 public:
-	Manager() :ManagerName("unknown"), ManagerPass("unknown"), role("unknown") {}
-	Manager(string ManagerName,string ManagerPass) :ManagerName(ManagerName), ManagerPass(ManagerPass){}
-	Manager(string ManagerName, string ManagerPass, string role) : ManagerName(ManagerName), ManagerPass(ManagerPass), role(role) {}
+	char role[20];
+
+	Manager() :ManagerName("unknown"), ManagerPass("unknown"), role("Manager") {}
+	Manager(char ManagerName[],char ManagerPass[])
+	{
+		memcpy(this->ManagerName, ManagerName, 20);
+		memcpy(this->ManagerPass, ManagerPass, 20);
+
+	}
+	Manager(char ManagerName[], char ManagerPass[], char role[])
+	{
+		memcpy(this->ManagerName, ManagerName, 20);
+		memcpy(this->ManagerPass, ManagerPass, 20);
+		memcpy(this->role, role, 20);
+
+	}
 	~Manager() {}
 
 	void CreateManager() 
 	{
 		cout << "\t\t\t\tEnter username : ";
-		cin.ignore();
-		getline(cin, ManagerName);
+		cin >> ManagerName;
 		cout << "\t\t\t\tEnter password : ";
-		getline(cin, ManagerPass);
-		
-		//role = "manager";
+		cin >> ManagerPass;
+		cout << "\t\t\t\tEnter role : ";
+		cin >> role;
+
 	}
 
 	//Control cashier

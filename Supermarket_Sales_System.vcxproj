@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountUser.cpp" />
     <ClCompile Include="Cashier.cpp" />
     <ClCompile Include="CashierCounter.cpp" />
     <ClCompile Include="CashierService.cpp" />
@@ -154,11 +154,7 @@
     <ClCompile Include="ServiceApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cashier.bin" />
     <None Include="ClassDiagram.cd" />
-    <None Include="manager.bin" />
-    <None Include="product.bin" />
-    <None Include="report.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
