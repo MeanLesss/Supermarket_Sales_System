@@ -19,7 +19,22 @@ public:
 		memcpy(this->role, role, 8);
 	}
 
-	void CreateUser(int role1)
+	string getName()
+	{
+		return UserName;
+	}
+	
+	string getPassword()
+	{
+		return PassWord;
+	}
+	
+	string getRole()
+	{
+		return role;
+	}
+
+	void CreateUser(int role1)/// role 1 = manager ,role 2 = cashier
 	{
 		cout << "\t\t\t\tEnter username : ";
 		cin >> UserName;

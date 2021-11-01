@@ -20,23 +20,20 @@ public:
 	{
 		memcpy(this->CashierName, CashierName, 20);
 		memcpy(this->CashierPass, CashierPass, 20);
+		/*this->CashierName = CashierName;
+		this->CashierPass = CashierPass;*/
 	}
-	Cashier(char CashierName[],char CashierPass[],char role[])
+	Cashier(char CashierName[], char CashierPass[], char role[])
 	{
 		memcpy(this->CashierName, CashierName, 20);
 		memcpy(this->CashierPass, CashierPass, 20);
 		memcpy(this->role, role, 20);
+		/*this->CashierName = CashierName;
+		this->CashierPass = CashierPass;
+		this->role = role;*/
+
 	}
 
-	/*void CreateCashier()
-	{
-		cout << "\t\t\t\tEnter username : ";
-		cin >> CashierName;
-		cout << "\t\t\t\tEnter password : ";
-		cin >> CashierPass;
-		cout << "\t\t\t\tEnter role : ";
-		cin >> role;
-	}*/
 	string getRole()
 	{
 		return role;
@@ -60,8 +57,6 @@ public:
 	void AddProdToCart()
 	{
 		  
-
-		//service.SaveReportFile(/*need a parameter*/);
 	}
 
 	void DisplayCashier()

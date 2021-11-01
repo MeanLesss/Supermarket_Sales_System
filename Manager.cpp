@@ -26,13 +26,17 @@ public:
 	{
 		memcpy(this->ManagerName, ManagerName, 20);
 		memcpy(this->ManagerPass, ManagerPass, 20);
-
+		/*this->ManagerName = ManagerName;
+		this->ManagerPass = ManagerPass;*/
 	}
-	Manager(char ManagerName[], char ManagerPass[], char role[])
+	Manager(char ManagerName[], char ManagerPass[], char role[20])
 	{
 		memcpy(this->ManagerName, ManagerName, 20);
 		memcpy(this->ManagerPass, ManagerPass, 20);
 		memcpy(this->role, role, 20);
+		/*this->ManagerName = ManagerName;
+		this->ManagerPass = ManagerPass;
+		this->role = role;*/
 
 	}
 	~Manager() {}
