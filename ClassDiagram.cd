@@ -1,51 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Account">
-    <Position X="10.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAABEA=</HashCode>
-      <FileName>Account.cpp</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Cashier">
-    <Position X="10" Y="6.75" Width="2" />
-    <InheritanceLine Type="Service" FixedToPoint="true">
-      <Path>
-        <Point X="8.25" Y="7.026" />
-        <Point X="10" Y="7.026" />
-      </Path>
-    </InheritanceLine>
+    <Position X="10.25" Y="4.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAiAAAIEAAoAgAAAAAAABAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cashier.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Manager">
-    <Position X="3" Y="5.5" Width="2" />
+    <Position X="4.25" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAACAAAABAAAAAAAAAAAQZAAAAEABAAAAAAABAAAgAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAQZAAAAEABAAAAAAABAAAgAA=</HashCode>
       <FileName>Manager.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Menu">
-    <Position X="10.75" Y="1.25" Width="1.5" />
+    <Position X="9.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAYAAAgAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>Menu.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Product">
-    <Position X="6" Y="0.75" Width="1.5" />
+    <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAQAAAAAAAEAIAACAAIAAAAAAAgAAgAAIAAA=</HashCode>
+      <HashCode>IAACAAAAAQAAAAAAEEAIAQCAAIAAAAAAAgAAgAAIAAA=</HashCode>
       <FileName>Product.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service">
-    <Position X="6" Y="4.75" Width="2.25" />
+    <Position X="7.25" Y="4.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>BAAAAgAAAAQECAAAAAQAAAEAAAACQBAAQQIAIAgAAAA=</HashCode>
+      <HashCode>AAAAAgAAAgQACAAACAAACAAEAAAAQAAAQQIAAAgAAAA=</HashCode>
       <FileName>Service.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountUser">
+    <Position X="11.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAQAAAAAABAAAABAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>AccountUser.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CashierService">
+    <Position X="13.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>CashierService.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogInAuthentication">
+    <Position X="15.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAQAAAAAAAAAIAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogInAuthentication.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManagerService">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAgIAAAAICAAAAAgEAAAAAAAAAEAAQAAAAAA=</HashCode>
+      <FileName>ManagerService.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServiceApp">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAgAgEAAAAAgAAAEAQQAAAAAA=</HashCode>
+      <FileName>ServiceApp.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
