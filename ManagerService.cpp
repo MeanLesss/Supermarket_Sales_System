@@ -17,6 +17,7 @@ private:
 	Cashier cashier;
 	char option;
 public:
+	ManagerService() {}
 	void LogInAsManager()
 	{
 		menu.DisplayManagerMenu();
@@ -80,7 +81,7 @@ public:
 
 			break;
 		case '9':
-			exit(1);
+			system("cls");
 			break;
 		}
 	}

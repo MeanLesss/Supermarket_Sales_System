@@ -1,14 +1,14 @@
 #pragma once
 #include"Service.cpp"
 #include"Menu.cpp"
-#include"ManagerService.cpp"
 #include"AccountUser.cpp"
+#include"LogInAuthentication.cpp"
 
 class ServiceApp
 {
 private:
+	LogInAuthentication Login;
 	Manager manager;
-	ManagerService ManService;
 	Menu menu;
 	Service service;
 	AccountUser account;
@@ -16,16 +16,8 @@ private:
 	char loginmenu;
 
 public:
-	//ServiceApp():loginmenu('0') {}
-	void LogIn()
-	{
-
-		cout << "\t\t\t\tLogged in as manager" << endl;
-		ManService.LogInAsManager();
-		//or cashier service
-		cout << "\t\t\t\tLogged in as cashier" << endl;
-
-	}
+	ServiceApp(){}
+	
 	void MenuProcess()
 	{
 		do
@@ -38,7 +30,7 @@ public:
 			{
 			case '1':
 				system("cls");
-				LogIn();
+				Login.LogIn();
 				break;
 			case '2':
 				system("cls");

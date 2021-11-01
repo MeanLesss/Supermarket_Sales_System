@@ -10,5 +10,13 @@ public:
 	~CashierService() {}
 
 
+	void LogInAsCashier()
+	{
+		cout << "From cashier service;" << endl;
+
+		system("pause");
+	}
+
+
 };
 

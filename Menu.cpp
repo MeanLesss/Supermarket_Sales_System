@@ -38,7 +38,7 @@ public:
 			<< "\t\t\t\t*              6.Update cashier account             *" << endl
 			<< "\t\t\t\t*              7.Delete cashier account             *" << endl
 			<< "\t\t\t\t*              8.View all cashier account and pass  *" << endl
-			<< "\t\t\t\t*              9.Exit                               *" << endl
+			<< "\t\t\t\t*              9.Sign out                           *" << endl
 			<< "\t\t\t\t*****************************************************" << endl
 			<< "\t\t\t\tEnter your choice : ";
 		
