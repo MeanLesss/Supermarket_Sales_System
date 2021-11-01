@@ -11,9 +11,10 @@ private:
 	string role;*/
 	char CashierName[20];
 	char CashierPass[20];
+	char role[20];
+
 	
 public:
-	char role[20];
 	Cashier() :CashierName("unknown"), CashierPass("unknown"), role("cashier") {}
 	Cashier(char CashierName[], char CashierPass[]):role("cashier")
 	{
@@ -36,6 +37,10 @@ public:
 		cout << "\t\t\t\tEnter role : ";
 		cin >> role;
 	}*/
+	string getRole()
+	{
+		return role;
+	}
 	void SearchCashier()
 	{
 

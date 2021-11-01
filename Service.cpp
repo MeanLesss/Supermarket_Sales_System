@@ -92,7 +92,7 @@ public:
 			{
 				fin.read(reinterpret_cast<char*>(&manager), sizeof(Manager));
 				if (fin.eof()) { break; }
-				if(manager.role == role)
+				if(manager.getRole() == role)
 				{
 					manager.DisplayManager();
 				}
@@ -102,7 +102,7 @@ public:
 				fin.read(reinterpret_cast<char*>(&cashier), sizeof(Cashier));
 				if (fin.eof()) { break; }
 
-				if (cashier.role == role)
+				if (cashier.getRole() == role)
 				{
 					cashier.DisplayCashier();
 				}

@@ -14,11 +14,12 @@ private:
 	string role;*/
 	char ManagerName[20];
 	char ManagerPass[20];
+	char role[20];
+
 	//Service service;
 
 
 public:
-	char role[20];
 
 	Manager() :ManagerName("unknown"), ManagerPass("unknown"), role("Manager") {}
 	Manager(char ManagerName[],char ManagerPass[]):role("manager")
@@ -48,6 +49,10 @@ public:
 	}*/
 
 	//Control cashier
+	string getRole()
+	{
+		return role;
+	}
 	void AddCashierAcc() 
 	{
 		
