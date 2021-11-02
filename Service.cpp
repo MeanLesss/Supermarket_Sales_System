@@ -55,11 +55,12 @@ public:
 		
 		while (1)
 		{
-			count++;
 			fin.read(reinterpret_cast<char*>(&product), sizeof(Product));
-			product.ProductNo = count;
+			product.setProductNo(count);
 			if (fin.eof()) { break; }
 			product.DisplayProduct();
+			count++;
+
 		}
 
 		fin.close();

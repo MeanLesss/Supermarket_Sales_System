@@ -12,12 +12,12 @@ class Product
 private:
 	//char ProductName[20];
 	string ProductName;
+	int ProductNo;
 	float Price;
 	float Quantity;
 	float Discount;
 
 public:
-	int ProductNo;
 
 	Product() :ProductName("unknown"), ProductNo(0), Price(0), Quantity(0), Discount(0){ }
 	Product(string ProductName,int ProductNo,float Price,float Quantity) 
@@ -37,7 +37,14 @@ public:
 		this->Quantity = Quantity;
 		this->Discount = Discount;
 	}
-
+	int getProductNo()
+	{
+		return ProductNo;
+	}
+	void setProductNo(int ProductNo)
+	{
+		this->ProductNo = ProductNo;
+	}
 	void CreateProduct() 
 	{
 		cout << "\t\t\t\tCreate product : Note (do NOT use space for product name use \"_\" instead)" << endl << endl;
@@ -51,12 +58,12 @@ public:
 		cin >> Discount;
 	}
 	void SearchProduct()
-	{
-
+	{ 
 	}
 	void AddToCart()
 	{
-
+		cout << "Enter product number : ";
+		cin >> ProductNo;
 
 	}
 

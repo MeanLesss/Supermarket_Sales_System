@@ -23,12 +23,19 @@ public:
 		switch (option)
 		{
 		case '1':
+			system("cls");
 
 			AddToCart();
+
+			system("pause");
 			goto START;
 			break;
 		case '2':
+			system("cls");
 
+
+
+			system("pause");
 			goto START;
 			break;
 		case '3':
@@ -39,8 +46,6 @@ public:
 			break;
 
 		}
-
-		system("pause");
 	}
 
 
