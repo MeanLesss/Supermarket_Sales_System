@@ -33,6 +33,7 @@ public:
                     cout << "\t\t\t\tLogged in as :" << endl;
                     manager.DisplayManager();
                     ManService.LogInAsManager();
+                    break;
                 }
                 if (account.getRole() == "cashier")
                 {
@@ -41,6 +42,7 @@ public:
                     cout << "\t\t\t\tLogged in as :" << endl;
                     cashier.DisplayCashier();
                     CashService.LogInAsCashier();
+                    break;
                 }
             }
 

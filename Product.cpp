@@ -54,6 +54,12 @@ public:
 	{
 
 	}
+	void AddToCart()
+	{
+
+
+	}
+
 
 	void UpdateProduct(Product & product)
 	{

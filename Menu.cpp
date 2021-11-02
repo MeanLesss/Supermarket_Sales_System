@@ -28,7 +28,7 @@ public:
 	void DisplayManagerMenu()
 	{
 		cout << "\t\t\t\t*****************************************************" << endl
-			<< "\t\t\t\t*                     Log in Menu                   *" << endl
+			<< "\t\t\t\t*                    Manager Menu                   *" << endl
 			<< "\t\t\t\t*                                                   *" << endl
 			<< "\t\t\t\t*              1.Create product                     *" << endl
 			<< "\t\t\t\t*              2.View all product                   *" << endl
@@ -39,8 +39,23 @@ public:
 			<< "\t\t\t\t*              7.Delete cashier account             *" << endl
 			<< "\t\t\t\t*              8.View all cashier account and pass  *" << endl
 			<< "\t\t\t\t*              9.Sign out                           *" << endl
+			<< "\t\t\t\t*              0.Exit                               *" << endl
 			<< "\t\t\t\t*****************************************************" << endl
 			<< "\t\t\t\tEnter your choice : ";
 		
+	}
+
+	void DisplayCashierMenu()
+	{
+		cout << "\t\t\t\t*****************************************************" << endl
+			 << "\t\t\t\t*                    Cashier Menu                   *" << endl
+			 << "\t\t\t\t*                                                   *" << endl
+			 << "\t\t\t\t*              1.Add product to cart                *" << endl
+			 << "\t\t\t\t*              2.View all report                    *" << endl
+			 << "\t\t\t\t*              3.Sign out                           *" << endl
+			 << "\t\t\t\t*              0.Exit                               *" << endl
+			 << "\t\t\t\t*****************************************************" << endl
+			 << "\t\t\t\tEnter your choice : ";
+
 	}
 };

@@ -1,9 +1,14 @@
 #pragma once
 #include"Cashier.cpp"
+#include"Product.cpp"
+#include"Menu.cpp"
 
-class CashierService
+class CashierService:public Product
 {
 private:
+	Menu menu;
+	Product product;
+	char option;
 
 public:
 	CashierService() {}
@@ -12,7 +17,28 @@ public:
 
 	void LogInAsCashier()
 	{
-		cout << "From cashier service;" << endl;
+		START:
+		menu.DisplayCashierMenu();
+		option = _getche();
+		switch (option)
+		{
+		case '1':
+
+			AddToCart();
+			goto START;
+			break;
+		case '2':
+
+			goto START;
+			break;
+		case '3':
+			system("cls");
+			break;
+		case '0':
+			exit(1);
+			break;
+
+		}
 
 		system("pause");
 	}

@@ -3,28 +3,28 @@
   <Class Name="Cashier">
     <Position X="10.25" Y="4.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAiAAAIEAAoAgAAAAAAABAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAiAAAIEAApAgAAAAAAABAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cashier.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Manager">
-    <Position X="4.25" Y="5.5" Width="2" />
+    <Position X="5" Y="4.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAQZAAAAEABAAAAAAABAAAgAA=</HashCode>
+      <HashCode>AAACAAAAAAABAAAAAAAAQZAAAAEABAAAAAAABAAAgAA=</HashCode>
       <FileName>Manager.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Menu">
-    <Position X="9.5" Y="1" Width="1.5" />
+    <Position X="9.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAYAAAgAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAYAAAgAAAAAAgAAAABAAAAAAAA=</HashCode>
       <FileName>Menu.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Product">
     <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAQAAAAAAEEAIAQCAAIAAAAAAAgAAgAAIAAA=</HashCode>
+      <HashCode>IAACAAAAAQAAAAAAEEAIAQCAAIAAAAAAAgAAgAAIACA=</HashCode>
       <FileName>Product.cpp</FileName>
     </TypeIdentifier>
   </Class>
@@ -36,37 +36,37 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AccountUser">
-    <Position X="11.75" Y="1" Width="1.5" />
+    <Position X="11.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAQAAAAAABAAAABAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAQABAAAABAAIABAAAAAAAAAAAQAEAAAAAAA=</HashCode>
       <FileName>AccountUser.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CashierService">
-    <Position X="13.5" Y="1" Width="1.5" />
+    <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AEBAAAAAAgAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>CashierService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LogInAuthentication">
-    <Position X="15.25" Y="1" Width="1.5" />
+    <Position X="14" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAAAAAAAIAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAQAAAAAACAAIAAAEAAAAAAAIAAAAQAAAAAA=</HashCode>
       <FileName>LogInAuthentication.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ManagerService">
     <Position X="13.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAgIAAAAICAAAAAgEAAAAAAAAAEAAQAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAgAAAAAICAAAAAgEAAAAAAAAAEAAQAAAAAA=</HashCode>
       <FileName>ManagerService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ServiceApp">
     <Position X="15.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAgAgEAAAAAgAAAEAQQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAgAgEAAAAAgACAEAQQAAAAAA=</HashCode>
       <FileName>ServiceApp.cpp</FileName>
     </TypeIdentifier>
   </Class>
