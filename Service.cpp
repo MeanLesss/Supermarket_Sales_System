@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<string.h>
 #include<fstream>
 #include<vector>
 #include"Cashier.cpp"
@@ -56,7 +57,6 @@ public:
 		if (!fin) {
 			// throw FileNotFoundException("File open failed");
 			cerr << "File open failed" << endl;
-			system("pause");
 		}
 		while (1)
 		{
@@ -95,7 +95,6 @@ public:
 		if (!fin) {
 			// throw FileNotFoundException("File open failed");
 			cerr << "File open failed" << endl;
-			system("pause");
 		}
 		else
 		{
@@ -128,6 +127,35 @@ public:
 			fin.close();
 		}
 	}
+
+	void DeleteUser(string username)
+	{
+		AccountUser account;
+		ifstream fin;
+		ofstream fout;
+
+		fin.open(USER_FILE, ios::in | ios::binary);
+		if (!fin) {
+			cerr << "File open failed";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))) {
+			if (account.getUsername() != username) {
+				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
+			}
+		}
+
+		fin.close();
+		fout.close();
+
+		remove("user.dat");
+		rename("temp.dat", "user.dat");
+		cout << "User deleted" << endl;
+	}
+
+
 
 	// Load report of each cashier 
 	void SaveReportFile()

@@ -12,7 +12,8 @@ private:
 	Menu menu;
 	Service service;
 	AccountUser account;
-
+	
+	string name;
 	char Username[20], Password[20];
 	char loginmenu;
 
@@ -33,6 +34,7 @@ public:
 				system("cls");
 				cout << "\t\t\t\tEnter username : "; cin >> Username;
 				cout << "\t\t\t\tEnter password : "; cin >> Password;
+				system("cls");
 				Login.authenticateUser(Username,Password);
 				goto START;
 				break;
@@ -53,7 +55,10 @@ public:
 
 			case '4':
 				//delete user == manager
-
+				service.LoadFromUser("manager");
+				cout << "\t\t\t\tEnter a username to DELETE : "; cin >> name;
+				service.DeleteUser(name);
+				system("pause");
 				goto START;
 				break;
 			case '5':

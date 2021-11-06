@@ -15,6 +15,8 @@ private:
 	Menu menu;
 	Product product;
 	Cashier cashier;
+
+	string name;
 	char option;
 public:
 	void LogInAsManager()
@@ -74,8 +76,9 @@ public:
 			break;
 		case '7':
 			system("cls");
-			cashier.SearchCashier();
-			cashier.DeleteCashier(cashier);
+			service.LoadFromUser("cashier");
+			cout << "\t\t\t\tEnter a username to DELETE : "; cin >> name;
+			service.DeleteUser(name);
 			system("pause");
 			goto START;
 

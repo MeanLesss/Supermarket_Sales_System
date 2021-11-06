@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<fstream>
 using namespace std;
 
 class AccountUser
@@ -33,6 +34,10 @@ public:
 	{
 		return role;
 	}
+	string getUsername()
+	{
+		return UserName;
+	}
 
 	void CreateUser(int role1)/// role 1 = manager ,role 2 = cashier
 	{
@@ -44,13 +49,15 @@ public:
 		//cin >> role1;
 		if (role1 == 1)
 		{
-			memcpy(this->role, "manager", 20);
+			memcpy(this->role, "manager", 8);
 		}
 		if (role1 == 2)
 		{
-			memcpy(this->role, "cashier", 20);
+			memcpy(this->role, "cashier", 8);
 		}
 
 	}
+
+	
 	
 };
