@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AccountUser.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="Cashier.cpp" />
     <ClCompile Include="CashierCounter.cpp" />
     <ClCompile Include="CashierService.cpp" />
