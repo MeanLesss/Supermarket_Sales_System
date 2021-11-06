@@ -18,7 +18,8 @@ public:
 			 << "\t\t\t\t*              1.Log in                             *" << endl
 			 << "\t\t\t\t*              2.Sign up admin                      *" << endl
 			 << "\t\t\t\t*              3.Show admin                         *" << endl
-			 << "\t\t\t\t*              4.Exit                               *" << endl
+			 << "\t\t\t\t*              4.Delete admin                       *" << endl
+			 << "\t\t\t\t*              5.Exit                               *" << endl
 			 << "\t\t\t\t*                                                   *" << endl
 			 << "\t\t\t\t*****************************************************" << endl
 			 << "\t\t\t\tEnter your choice : ";

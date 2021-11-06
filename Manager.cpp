@@ -57,16 +57,8 @@ public:
 	{
 		return role;
 	}
-	void AddCashierAcc() 
-	{
-		
-	}
-	void EditCashierAcc()
-	{
 
-	}
-
-	void DeleteCashierAcc()
+	void DeleteManager()
 	{
 
 	}

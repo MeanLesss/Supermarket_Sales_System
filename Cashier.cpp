@@ -38,6 +38,12 @@ public:
 	{
 		return role;
 	}
+
+	void AddProdToCart()
+	{
+		  
+	}
+	
 	void SearchCashier()
 	{
 
@@ -54,10 +60,6 @@ public:
 
 	}
 
-	void AddProdToCart()
-	{
-		  
-	}
 
 	void DisplayCashier()
 	{

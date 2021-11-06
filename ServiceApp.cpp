@@ -49,9 +49,14 @@ public:
 				break;
 
 			case '4':
-				exit(1);
+				//delete user == manager
+
 				break;
 			}
-		} while (loginmenu != '4');
+			case '5':
+			    exit(1); 
+				break;
+
+		} while (loginmenu != '5');
 	}
 };
