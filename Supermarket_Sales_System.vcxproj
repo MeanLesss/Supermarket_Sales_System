@@ -146,6 +146,7 @@
     <ClCompile Include="CashierCounter.cpp" />
     <ClCompile Include="CashierService.cpp" />
     <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="ExceptionHandling.cpp" />
     <ClCompile Include="LogInAuthentication.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="user.dat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

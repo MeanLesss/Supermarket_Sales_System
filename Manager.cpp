@@ -26,8 +26,6 @@ public:
 	{
 		memcpy(this->ManagerName, ManagerName, 20);
 		memcpy(this->ManagerPass, ManagerPass, 20);
-		/*this->ManagerName = ManagerName;
-		this->ManagerPass = ManagerPass;*/
 	}
 	Manager(char ManagerName[], char ManagerPass[], char role[20])
 	{
@@ -40,17 +38,6 @@ public:
 
 	}
 	~Manager() {}
-
-	/*void CreateManager() 
-	{
-		cout << "\t\t\t\tEnter username : ";
-		cin >> ManagerName;
-		cout << "\t\t\t\tEnter password : ";
-		cin >> ManagerPass;
-		cout << "\t\t\t\tEnter role : ";
-		cin >> role;
-
-	}*/
 
 	//Control cashier
 	string getRole()

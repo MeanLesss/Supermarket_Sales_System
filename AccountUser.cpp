@@ -8,8 +8,8 @@ class AccountUser
 private:
 	char UserName[20];
 	char PassWord[20];
-public:
 	char role[8];
+public:
 
 	AccountUser():UserName("unknown"),PassWord("unknown") { }
 	AccountUser(char name[],char password[],char role[]) 
@@ -44,11 +44,11 @@ public:
 		//cin >> role1;
 		if (role1 == 1)
 		{
-			memcpy(this->role, "manager", 8);
+			memcpy(this->role, "manager", 20);
 		}
-		else if (role1 == 2)
+		if (role1 == 2)
 		{
-			memcpy(this->role, "cashier", 8);
+			memcpy(this->role, "cashier", 20);
 		}
 
 	}

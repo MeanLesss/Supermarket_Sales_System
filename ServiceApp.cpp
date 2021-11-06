@@ -22,6 +22,7 @@ public:
 	{
 		do
 		{
+			START:
 			system("cls");
 			menu.DisplayLogInMenu();
 			loginmenu = _getche();
@@ -33,29 +34,33 @@ public:
 				cout << "\t\t\t\tEnter username : "; cin >> Username;
 				cout << "\t\t\t\tEnter password : "; cin >> Password;
 				Login.authenticateUser(Username,Password);
+				goto START;
 				break;
 			case '2':
 				system("cls");
 				account.CreateUser(1);
 				service.SignUp(account);
+				goto START;
 				break;
 			case '3':
 				system("cls");
 
 				service.LoadFromUser("manager");
 				//manager.DisplayManager(manager);
-				
 				system("pause");
+				goto START;
 				break;
 
 			case '4':
 				//delete user == manager
 
+				goto START;
+				break;
+			case '5':
+				exit(1);
 				break;
 			}
-			case '5':
-			    exit(1); 
-				break;
+			
 
 		} while (loginmenu != '5');
 	}

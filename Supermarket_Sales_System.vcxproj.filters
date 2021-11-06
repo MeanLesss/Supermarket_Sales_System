@@ -60,8 +60,12 @@
     <ClCompile Include="Application.cpp">
       <Filter>Source Files\APPLICATION</Filter>
     </ClCompile>
+    <ClCompile Include="ExceptionHandling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="user.dat" />
   </ItemGroup>
 </Project>

@@ -3,5 +3,13 @@
 using namespace std;
 class ExceptionHandling
 {
-    void 
+private:
+
+
+
+public:
+    void LogInException()
+    {
+
+    }
 };
