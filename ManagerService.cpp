@@ -18,7 +18,6 @@ private:
 
 	string name;
 	char option;
-	int id;
 public:
 	void LogInAsManager()
 	{
@@ -30,7 +29,7 @@ public:
 		case '1':
 			system("cls");
 			product.CreateProduct();
-			service.SaveToProduct(product);
+			product.SaveToProduct(product);
 			system("pause");
 			goto START;
 			break;
@@ -38,7 +37,7 @@ public:
 			system("cls");
 			cout << "======================================================================================================" << endl;
 			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
-			service.LoadFromProduct();
+			product.LoadFromProduct();
 			system("pause");
 			goto START;
 
@@ -55,9 +54,9 @@ public:
 			system("cls");
 			/*product.SearchProduct();
 			product.RemoveProduct(product);*/
-			service.LoadFromProduct();
-			cout << "Enter the product No : "; cin >> id;
-			service.DeleteProduct(id);
+			product.LoadFromProduct();
+			cout << "Enter the product Name : "; cin >> name;
+			product.DeleteProduct(name);
 			system("pause");
 			goto START;
 

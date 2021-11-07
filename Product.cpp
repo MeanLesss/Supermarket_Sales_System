@@ -2,10 +2,9 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<stdio.h>
 using namespace std;
-
-//const string ProductFile = "product.dat";
-
+const char PRODUCT_FILE[] = "product.dat";
 
 class Product
 {
@@ -40,6 +39,11 @@ public:
 	{
 		return ProductNo;
 	}
+	string getProductName() 
+	{
+		return ProductName;
+	}
+
 	void setProductNo(int ProductNo)
 	{
 		this->ProductNo = ProductNo;
@@ -73,9 +77,85 @@ public:
 		cout << "update product";
 
 	}
-	void ShowProduct()
+
+	//File in out for product
+	void SaveToProduct(Product& product)
 	{
-		cout << "show product";
+		//cout << "\t\t\t\tSign up as admin";
+		ofstream fout;
+		fout.open(PRODUCT_FILE, ios::out | ios::app | ios::binary);
+		if (!fout) {
+			// throw FileNotFoundException("File open failed");
+			cerr << "File open failed" << endl;
+			system("pause");
+		}
+		fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+		fout.close();
+	}
+	void LoadFromProduct()
+	{
+		Product product;
+		int count = 0;
+		ifstream fin;
+		fin.open(PRODUCT_FILE, ios::in | ios::binary);
+		if (!fin) {
+			// throw FileNotFoundException("File open failed");
+			cerr << "File open failed" << endl;
+		}
+		while (1)
+		{
+			fin.read(reinterpret_cast<char*>(&product), sizeof(Product));
+			product.setProductNo(count);
+			if (fin.eof()) { break; }
+			product.DisplayProduct();
+			count++;
+
+		}
+
+		fin.close();
+	}
+
+	void DeleteProduct(string productname)
+	{
+		Product product;
+		ifstream fin;
+		ofstream fout;
+
+		fin.open(PRODUCT_FILE, ios::in | ios::binary);
+		if (!fin) {
+			cerr << "File open failed";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product))) // I use this method because it read better than the function read in while(argument)
+		{
+			if (fin.eof()) { break; }
+			if (product.getProductName() != productname) {
+				fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+			}
+			else
+			{
+				continue;
+			}
+		}
+		fin.close();
+		fout.close();
+		int res = 0;
+		if (remove(PRODUCT_FILE) != 0)
+		{
+			cout << "Failed to remove!" << endl;
+		}
+		//remove(USER_FILE);
+		res = rename("temp.dat", PRODUCT_FILE);
+		if (res == 0)
+		{
+			cout << "Item removed!" << endl;
+		}
+		else
+		{
+			cout << "Failed to rename" << endl;
+		}
 	}
 	
 	void DisplayProduct()
