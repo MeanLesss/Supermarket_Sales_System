@@ -63,9 +63,13 @@
     <ClCompile Include="ExceptionHandling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProductService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="user.dat" />
+    <None Include="product.dat" />
   </ItemGroup>
 </Project>

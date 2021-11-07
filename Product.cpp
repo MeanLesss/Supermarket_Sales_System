@@ -10,8 +10,7 @@ using namespace std;
 class Product
 {
 private:
-	//char ProductName[20];
-	string ProductName;
+	char ProductName[20];
 	int ProductNo;
 	float Price;
 	float Quantity;
@@ -20,18 +19,18 @@ private:
 public:
 
 	Product() :ProductName("unknown"), ProductNo(0), Price(0), Quantity(0), Discount(0){ }
-	Product(string ProductName,int ProductNo,float Price,float Quantity) 
+	Product(char ProductName[],int ProductNo,float Price,float Quantity) 
 	{
-		//memcpy(this->ProductName, ProductName,20);
-		this->ProductName = ProductName;
+		memcpy(this->ProductName, ProductName,20);
+		//this->ProductName = ProductName;
 		this->ProductNo = ProductNo;
 		this->Price = Price;
 		this->Quantity = Quantity;
 	}
-	Product(string ProductName, int ProductNo, float Price, float Quantity, float Discount) 
+	Product(char ProductName[], int ProductNo, float Price, float Quantity, float Discount) 
 	{
-		//memcpy(this->ProductName, ProductName, 20);
-		this->ProductName = ProductName;
+		memcpy(this->ProductName, ProductName, 20);
+		//this->ProductName = ProductName;
 		this->ProductNo = ProductNo;
 		this->Price = Price;
 		this->Quantity = Quantity;
@@ -59,6 +58,7 @@ public:
 	}
 	void SearchProduct()
 	{ 
+
 	}
 	void AddToCart()
 	{
@@ -77,10 +77,7 @@ public:
 	{
 		cout << "show product";
 	}
-	void RemoveProduct(Product & product)
-	{
-		cout << "remove product";
-	}
+	
 	void DisplayProduct()
 	{
 		

@@ -60,8 +60,8 @@ public:
 		}
 		while (1)
 		{
-			product.setProductNo(count);
 			fin.read(reinterpret_cast<char*>(&product), sizeof(Product));
+			product.setProductNo(count);
 			if (fin.eof()) { break; }
 			product.DisplayProduct();
 			count++;
@@ -70,7 +70,33 @@ public:
 
 		fin.close();
 	}
+	void DeleteProduct(int id)
+	{
+		Product product;
+		ifstream fin;
+		ofstream fout;
 
+		fin.open(PRODUCT_FILE, ios::in | ios::binary);
+		if (!fin) {
+			cerr << "File open failed";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (1) // I use this method because it read better than the function read in while(argument)
+		{
+			fin.read(reinterpret_cast<char*>(&product), sizeof(Product));
+			if (fin.eof()) { break; }
+			if (product.getProductNo() != id) {
+				fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+			}
+		}
+		fin.close();
+		fout.close();
+		remove("product.dat");
+		rename("temp.dat", "product.dat");
+		cout << "Item deleted" << endl;
+	}
 	//Manager file in out
 	void SignUp(AccountUser& account)//add admin
 	{
@@ -85,10 +111,10 @@ public:
 		fout.close();
 	}
 
-	
 	//void LoadFromUser(string role)
 	void LoadFromUser(string role)
 	{
+		int count = 0;
 		ifstream fin;
 		fin.open(USER_FILE, ios::in | ios::binary);
 		//fin.read(reinterpret_cast<char*>(&manager), sizeof(Manager))
@@ -108,11 +134,12 @@ public:
 					{
 						manager.DisplayManager();
 					}
+					
 				}
 			}
 			else if (role == "cashier")
 			{
-				while (1)
+				while (1)// I use this method because it read better than the function read in while(argument)
 				{
 					fin.read(reinterpret_cast<char*>(&cashier), sizeof(AccountUser));
 					if (fin.eof()) { break; }
@@ -121,6 +148,7 @@ public:
 					{
 						cashier.DisplayCashier();
 					}
+					
 				}
 			}
 			
@@ -135,27 +163,45 @@ public:
 		ofstream fout;
 
 		fin.open(USER_FILE, ios::in | ios::binary);
-		if (!fin) {
+		if (!fin) 
+		{
 			cerr << "File open failed";
 			exit(1);
 		}
 		fout.open("temp.dat", ios::out | ios::app | ios::binary);
 		fin.seekg(0, ios::beg);
-		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))) {
-			if (account.getUsername() != username) {
+		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))) 
+		{
+			/*fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))*/;
+			if (fin.eof()) { break; }
+			if (account.getUsername() != username) 
+			{
 				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
 			}
+			else
+			{
+				continue;
+			}
 		}
-
 		fin.close();
 		fout.close();
-
-		remove("user.dat");
-		rename("temp.dat", "user.dat");
-		cout << "User deleted" << endl;
+		int res = 0;
+		if (remove(USER_FILE) != 0)
+		{
+			cout << "Failed to remove!" << endl;
+		}
+		//remove(USER_FILE);
+		res = rename("temp.dat", USER_FILE);
+		if (res == 0)
+		{
+			cout << "User deleted" << endl;
+		}
+		else
+		{
+			cout << "Failed to rename" << endl;
+		}
+		
 	}
-
-
 
 	// Load report of each cashier 
 	void SaveReportFile()

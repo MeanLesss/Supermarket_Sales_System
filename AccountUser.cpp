@@ -39,7 +39,7 @@ public:
 		return UserName;
 	}
 
-	void CreateUser(int role1)/// role 1 = manager ,role 2 = cashier
+	void CreateUser(int role1)/// role indicator 1 = manager , 2 = cashier
 	{
 		cout << "\t\t\t\tEnter username : ";
 		cin >> UserName;
@@ -58,6 +58,4 @@ public:
 
 	}
 
-	
-	
 };

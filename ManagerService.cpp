@@ -18,6 +18,7 @@ private:
 
 	string name;
 	char option;
+	int id;
 public:
 	void LogInAsManager()
 	{
@@ -52,8 +53,11 @@ public:
 			break;
 		case '4':
 			system("cls");
-			product.SearchProduct();
-			product.RemoveProduct(product);
+			/*product.SearchProduct();
+			product.RemoveProduct(product);*/
+			service.LoadFromProduct();
+			cout << "Enter the product No : "; cin >> id;
+			service.DeleteProduct(id);
 			system("pause");
 			goto START;
 
