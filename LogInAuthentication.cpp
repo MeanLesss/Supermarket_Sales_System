@@ -23,9 +23,10 @@ public:
     {
         ifstream fin;
         fin.open(USER_FILE, ios::in | ios::binary);
-        while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))) {
-            if (account.getName() == username && account.getPassword() == password) {
-
+        while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
+        {
+            if (account.getName() == username && account.getPassword() == password) 
+            {
                 if (account.getRole() == "manager")
                 {   
                     char role[20] = "manager";
