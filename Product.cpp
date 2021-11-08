@@ -109,7 +109,6 @@ public:
 			if (fin.eof()) { break; }
 			product.DisplayProduct();
 			count++;
-
 		}
 
 		fin.close();

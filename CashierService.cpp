@@ -11,8 +11,8 @@ private:
 	char option;
 
 public:
-	CashierService() {}
-	~CashierService() {}
+	//CashierService() {}
+	//~CashierService() {}
 
 
 	void LogInAsCashier()
