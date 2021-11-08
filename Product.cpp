@@ -72,9 +72,57 @@ public:
 	}
 
 
-	void UpdateProduct(Product & product)
+	void UpdateProduct(string productname)
 	{
-		cout << "update product";
+		Product product;
+		ifstream fin;
+		ofstream fout;
+
+		fin.open(PRODUCT_FILE, ios::in | ios::binary);
+		if (!fin)
+		{
+			cerr << "File open failed";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product))) // I use this method because it read better than the function read in while(argument)
+		{
+			if (fin.eof()) { break; }
+			if (product.getProductName() != productname)
+			{
+				fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+			}
+			else
+			{
+				product.CreateProduct();
+				fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+			}
+		}
+		fin.close();
+		fout.close();
+		int removeStatus = 0;
+		//removeStatus = remove(PRODUCT_FILE);
+		if (remove("product.dat") == 0)
+		{
+			//cout << "Failed to remove!" << endl;
+			cout << "success remove" << endl;
+		}
+		else
+		{
+			cout << "fail to remove" << endl;
+		}
+		//remove(USER_FILE);
+		int renameStatus;
+		renameStatus = rename("temp.dat", "product.dat");
+		if (renameStatus == 0)
+		{
+			cout << "Item renamed!" << endl;
+		}
+		else
+		{
+			cout << "Failed to rename" << endl;
+		}
 
 	}
 

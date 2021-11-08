@@ -44,16 +44,16 @@ public:
 			break;
 		case '3':
 			system("cls");
-			product.SearchProduct();
-			product.UpdateProduct(product);
+			product.LoadFromProduct();
+			cout << "Enter product name : ";
+			cin >> name;
+			product.UpdateProduct(name);
 			system("pause");
 			goto START;
 
 			break;
 		case '4':
 			system("cls");
-			/*product.SearchProduct();
-			product.RemoveProduct(product);*/
 			product.LoadFromProduct();
 			cout << "Enter the product Name : "; cin >> name;
 			product.DeleteProduct(name);
