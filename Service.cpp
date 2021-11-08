@@ -88,8 +88,8 @@ public:
 				}
 			}
 			
-			fin.close();
 		}
+		fin.close();
 	}
 
 	void DeleteUser(string username)
@@ -108,7 +108,7 @@ public:
 		fin.seekg(0, ios::beg);
 		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))) 
 		{
-			/*fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))*/;
+			/*fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser));*/
 			
 			if (fin.eof()) { break; }
 			if (account.getUsername() != username) 
@@ -123,12 +123,12 @@ public:
 		fin.close();
 		fout.close();
 		int res = 0;
-		if (remove(USER_FILE) != 0)
+		if (remove("user.dat") != 0)
 		{
 			cout << "Failed to remove!" << endl;
 		}
 		//remove(USER_FILE);
-		res = rename("temp.dat", USER_FILE);
+		res = rename("temp.dat","user.dat");
 		if (res == 0)
 		{
 			cout << "User deleted" << endl;
