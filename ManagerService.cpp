@@ -62,7 +62,7 @@ public:
 			break;
 		case '5':
 			system("cls");
-			account.CreateUser(2);// 2 is for cashier
+			account.CreateUser(2);// 2 is for cashier role
 			service.SignUp(account);
 			system("pause");
 			goto START;
@@ -80,7 +80,7 @@ public:
 		case '7':
 			system("cls");
 			service.LoadFromUser("cashier");
-			cout << "\t\t\t\tEnter a username to DELETE : "; cin >> name;
+			cout << "\t\t\t\tEnter a cashier to DELETE : "; cin >> name;
 			service.DeleteUser(name);
 			system("pause");
 			goto START;

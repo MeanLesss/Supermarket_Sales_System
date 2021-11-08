@@ -147,6 +147,7 @@
     <ClCompile Include="CashierService.cpp" />
     <ClCompile Include="Counter.cpp" />
     <ClCompile Include="ExceptionHandling.cpp" />
+    <ClCompile Include="InvoiceBilling.cpp" />
     <ClCompile Include="LogInAuthentication.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />

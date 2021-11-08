@@ -1,9 +1,9 @@
 #pragma once
 #include"Cashier.cpp"
-#include"Product.cpp"
+#include"ProductService.cpp"
 #include"Menu.cpp"
 
-class CashierService:public Product
+class CashierService:public ProductService
 {
 private:
 	Menu menu;
@@ -11,7 +11,7 @@ private:
 	char option;
 
 public:
-	//CashierService() {}
+	CashierService() {}
 	//~CashierService() {}
 
 
@@ -24,8 +24,7 @@ public:
 		{
 		case '1':
 			system("cls");
-
-			AddToCart();
+			Addtocart();
 
 			system("pause");
 			goto START;

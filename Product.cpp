@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<vector>
 #include<stdio.h>
 using namespace std;
 const char PRODUCT_FILE[] = "product.dat";
@@ -9,6 +10,7 @@ const char PRODUCT_FILE[] = "product.dat";
 class Product
 {
 private:
+
 	char ProductName[20];
 	int ProductNo;
 	float Price;
@@ -18,6 +20,11 @@ private:
 public:
 
 	Product() :ProductName("unknown"), ProductNo(0), Price(0), Quantity(0), Discount(0){ }
+	Product(char ProductName[], float Quantity)
+	{
+		memcpy(this->ProductName, ProductName, 20);
+		this->Quantity = Quantity;
+	}
 	Product(char ProductName[], int ProductNo, float Price, float Quantity, float Discount) 
 	{
 		memcpy(this->ProductName, ProductName, 20);
@@ -34,6 +41,10 @@ public:
 	string getProductName() 
 	{
 		return ProductName;
+	}
+	void setProductName(char productname[])
+	{
+		memcpy(this->ProductName, productname, 20);
 	}
 
 	void setProductNo(int ProductNo)
@@ -52,13 +63,39 @@ public:
 		cout << "\t\t\t\tEnter discount : ";
 		cin >> Discount;
 	}
-	void AddToCart()
+	void FillVector()
 	{
-		cout << "Enter product number : ";
-		cin >> ProductNo;
-
+		Product product;
+		vector<Product> addProduct;
+		ifstream fin;
+		fin.open(PRODUCT_FILE, ios::in | ios::binary);
+		if (!fin)
+		{
+			cerr << "File open failed";
+			exit(1);
+		}
+		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
+		{
+			if (fin.eof()) { break; }
+			addProduct.push_back(product);
+			
+		}
+		fin.close();
+		
+		unsigned int size = addProduct.size();
+		for (unsigned int i = 0; i < size; i++)
+		{
+			addProduct[i].DisplayProduct();
+		}
 	}
-
+	void PrintVector(vector<Product> & addedproduct)
+	{
+		unsigned int size = addedproduct.size();
+		for (unsigned int i = 0; i < size ; i++)
+		{
+			cout << addedproduct[i].getProductName();
+		}
+	}
 
 	void UpdateProduct(string productname)
 	{

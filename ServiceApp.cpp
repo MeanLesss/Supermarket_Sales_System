@@ -18,7 +18,9 @@ private:
 	char loginmenu;
 
 public:
-	
+	ServiceApp() {}
+
+
 	void MenuProcess()
 	{
 		do
