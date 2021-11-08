@@ -45,8 +45,7 @@ public:
 		case '3':
 			system("cls");
 			product.LoadFromProduct();
-			cout << "Enter product name : ";
-			cin >> name;
+			cout << "Enter product name : "; cin >> name;
 			product.UpdateProduct(name);
 			system("pause");
 			goto START;
@@ -55,7 +54,7 @@ public:
 		case '4':
 			system("cls");
 			product.LoadFromProduct();
-			cout << "Enter the product Name : "; cin >> name;
+			cout << "Enter product Name : "; cin >> name;
 			product.DeleteProduct(name);
 			system("pause");
 			goto START;
@@ -71,8 +70,9 @@ public:
 			break;
 		case '6':
 			system("cls");
-			cashier.SearchCashier();
-			cashier.UpdateCashier(cashier);
+			service.LoadFromUser("cashier");
+			cout << "Enter cashier name to update : "; cin >> name;
+			service.UpdateUser(name);
 			system("pause");
 			goto START;
 

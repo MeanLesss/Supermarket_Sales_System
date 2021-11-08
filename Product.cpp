@@ -18,14 +18,6 @@ private:
 public:
 
 	Product() :ProductName("unknown"), ProductNo(0), Price(0), Quantity(0), Discount(0){ }
-	Product(char ProductName[],int ProductNo,float Price,float Quantity) 
-	{
-		memcpy(this->ProductName, ProductName,20);
-		//this->ProductName = ProductName;
-		this->ProductNo = ProductNo;
-		this->Price = Price;
-		this->Quantity = Quantity;
-	}
 	Product(char ProductName[], int ProductNo, float Price, float Quantity, float Discount) 
 	{
 		memcpy(this->ProductName, ProductName, 20);
@@ -59,10 +51,6 @@ public:
 		cin >> Quantity;
 		cout << "\t\t\t\tEnter discount : ";
 		cin >> Discount;
-	}
-	void SearchProduct()
-	{ 
-
 	}
 	void AddToCart()
 	{

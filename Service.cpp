@@ -140,6 +140,53 @@ public:
 		
 	}
 
+	void UpdateUser(string username)
+	{
+		AccountUser account;
+		ifstream fin;
+		ofstream fout;
+
+		fin.open(USER_FILE, ios::in | ios::binary);
+		if (!fin)
+		{
+			cerr << "File open failed";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
+		{
+			/*fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser));*/
+
+			if (fin.eof()) { break; }
+			if (account.getUsername() != username)
+			{
+				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
+			}
+			else
+			{
+				continue;
+			}
+		}
+		fin.close();
+		fout.close();
+		int res = 0;
+		if (remove("user.dat") != 0)
+		{
+			cout << "Failed to remove!" << endl;
+		}
+		//remove(USER_FILE);
+		res = rename("temp.dat", "user.dat");
+		if (res == 0)
+		{
+			cout << "User deleted" << endl;
+		}
+		else
+		{
+			cout << "Failed to rename" << endl;
+		}
+	}
+
 	// Load report of each cashier 
 	void SaveReportFile()
 	{
