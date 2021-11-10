@@ -6,14 +6,14 @@
 class CashierService:public ProductService
 {
 private:
-	Menu menu;
-	Product product;
+	
 	char option;
 
 public:
-	CashierService() {}
+	CashierService():option(' ') {}
 	//~CashierService() {}
-
+	Menu menu;
+	Product product;
 
 	void LogInAsCashier()
 	{

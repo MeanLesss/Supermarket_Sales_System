@@ -12,17 +12,18 @@ private:
     AccountUser account;
     Cashier cashier;
     Manager manager;
+
+    int count;
 public:
-	LogInAuthentication(){}
+	LogInAuthentication():count(0) {}
 	//log ins
 
-	// Need log in control statement to devide the program 
-	// and to go back and forth from menu to menu
 
     AccountUser* authenticateUser(char username[], char password[])
     {
         ifstream fin;
         fin.open(USER_FILE, ios::in | ios::binary);
+        count = 0;
         while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
         {
             if (account.getName() == username && account.getPassword() == password) 
@@ -34,6 +35,7 @@ public:
                     cout << "\t\t\t\tLogged in as :" << endl;
                     manager.DisplayManager();
                     ManService.LogInAsManager();
+                    count++;
                     break;
                 }
                 if (account.getRole() == "cashier")
@@ -43,15 +45,24 @@ public:
                     cout << "\t\t\t\tLogged in as :" << endl;
                     cashier.DisplayCashier();
                     CashService.LogInAsCashier();
+                    count++;
                     break;
                 }
             }
 
         }
         fin.close();
+        if (count == 0) 
+        {
+            cout << "\t\t\t\t=======================================" << endl;
+            cout << "\t\t\t\t||  Incorrect password or username!  ||" << endl;
+            cout << "\t\t\t\t=======================================" << endl;
+            system("pause");
+        }
         return nullptr;
-
     }
+
+    
 
 
 };

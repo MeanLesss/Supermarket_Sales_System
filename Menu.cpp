@@ -7,9 +7,9 @@ using namespace std;
 class Menu
 {
 private:
-	char loginmenu ;
+
 public:
-	Menu menu() {}
+	Menu() {}
 	void DisplayLogInMenu()
 	{
 		cout << "\t\t\t\t*****************************************************" << endl

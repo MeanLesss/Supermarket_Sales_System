@@ -14,7 +14,8 @@ private:
 	AccountUser account;
 	
 	string name;
-	char Username[20], Password[20];
+	char Username[20];
+	char Password[20];
 	char loginmenu;
 
 public:
@@ -37,8 +38,7 @@ public:
 				cout << "\t\t\t\tEnter username : "; cin >> Username;
 				cout << "\t\t\t\tEnter password : "; cin >> Password;
 				system("cls");
-				Login.authenticateUser(Username,Password);
-				goto START;
+				Login.authenticateUser(Username, Password);
 				break;
 			case '2':
 				system("cls");
@@ -71,4 +71,6 @@ public:
 
 		} while (loginmenu != '5');
 	}
+
+	
 };
