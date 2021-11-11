@@ -44,6 +44,8 @@ public:
 			break;
 		case '3':
 			system("cls");
+			cout << "======================================================================================================" << endl;
+			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
 			product.LoadFromProduct();
 			cout << "Enter product name : "; cin >> name;
 			product.UpdateProduct(name);
@@ -53,6 +55,8 @@ public:
 			break;
 		case '4':
 			system("cls");
+			cout << "======================================================================================================" << endl;
+			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
 			product.LoadFromProduct();
 			cout << "Enter product Name : "; cin >> name;
 			product.DeleteProduct(name);
@@ -66,7 +70,6 @@ public:
 			service.SignUp(account);
 			system("pause");
 			goto START;
-
 			break;
 		case '6':
 			system("cls");

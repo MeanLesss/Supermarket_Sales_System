@@ -24,6 +24,9 @@ public:
 		{
 		case '1':
 			system("cls");
+			cout << "======================================================================================================" << endl;
+			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
+			product.LoadFromProduct();
 			Addtocart();
 
 			system("pause");
