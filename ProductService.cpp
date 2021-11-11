@@ -3,6 +3,7 @@
 #include<vector>
 #include<conio.h>
 #include"Menu.cpp"
+#include"AddProduct.cpp"
 #include"Product.cpp"
 #include"InvoiceBilling.cpp"
 using namespace std;
@@ -11,14 +12,15 @@ class ProductService
 {
 private:
 	Menu menu;
-	vector<Product> addedProduct;
+	AddedProduct addedProduct;
+	vector<AddedProduct> storingProduct;
 	Product product;
 	InvoiceBilling invoice;
 
 	int count = 0;
 	char option;
 	int id;
-	float quantity;
+	int quantity;
 public:
 	ProductService() {}
 	~ProductService() {}
@@ -36,11 +38,15 @@ public:
 			cout << "Enter the amount of product : ";
 			cin >> quantity;
 			//product
-			for (unsigned int i = 0 ; i < addedProduct.size(); i++)
+			addedProduct = AddedProduct(id, quantity);
+			storingProduct.push_back(addedProduct);
+			for (unsigned int i = 0 ; i < storingProduct.size(); i++)
 			{
 
+				/*compare the product with the search and then add the product to 
+				the storing product array*/
+				storingProduct[i].Display();//the dispaly work
 			}
-			addedProduct.push_back(product);
 			cout << "Do you want to add more items?(y/n) : "; 
 			option = _getche();
 			switch (option)
@@ -52,7 +58,7 @@ public:
 			case 'n':
 			case 'N':
 				system("cls");
-				invoice.PrintInvoice(addedProduct);
+				//invoice.PrintInvoice(addedProduct);
 				system("pause");
 				break;
 			}
