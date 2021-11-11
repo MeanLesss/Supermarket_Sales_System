@@ -34,6 +34,7 @@ public:
                     manager = Manager(username, password,role);
                     cout << "\t\t\t\tLogged in as :" << endl;
                     manager.DisplayManager();
+                    fin.close();
                     ManService.LogInAsManager();
                     count++;
                     break;
@@ -44,6 +45,7 @@ public:
                     Cashier cashier(username, password, role);
                     cout << "\t\t\t\tLogged in as :" << endl;
                     cashier.DisplayCashier();
+                    fin.close();
                     CashService.LogInAsCashier();
                     count++;
                     break;

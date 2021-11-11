@@ -115,10 +115,6 @@ public:
 			{
 				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
 			}
-			else
-			{
-				continue;
-			}
 		}
 		fin.close();
 		fout.close();
@@ -131,7 +127,7 @@ public:
 		res = rename("temp.dat","user.dat");
 		if (res == 0)
 		{
-			cout << "User deleted" << endl;
+			cout << "\t\t\t\tUser deleted" << endl;
 		}
 		else
 		{
@@ -165,7 +161,8 @@ public:
 			}
 			else
 			{
-				continue;
+				account.CreateUser(2);
+				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
 			}
 		}
 		fin.close();
@@ -179,7 +176,7 @@ public:
 		res = rename("temp.dat", "user.dat");
 		if (res == 0)
 		{
-			cout << "User deleted" << endl;
+			cout << "\t\t\t\tUser updated!" << endl;
 		}
 		else
 		{
