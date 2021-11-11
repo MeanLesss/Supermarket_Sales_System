@@ -69,6 +69,7 @@ public:
 					if (manager.getRole() == role)
 					{
 						manager.DisplayManager();
+						cout << endl;
 					}
 					
 				}
@@ -83,6 +84,7 @@ public:
 					if (cashier.getRole() == role)
 					{
 						cashier.DisplayCashier();
+						cout << endl;
 					}
 					
 				}

@@ -19,7 +19,7 @@ public:
 	//log ins
 
 
-    AccountUser* authenticateUser(char username[], char password[])
+    void authenticateUser(char username[], char password[])
     {
         ifstream fin;
         fin.open(USER_FILE, ios::in | ios::binary);
@@ -61,7 +61,6 @@ public:
             cout << "\t\t\t\t=======================================" << endl;
             system("pause");
         }
-        return nullptr;
     }
 
     

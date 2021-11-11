@@ -1,8 +1,9 @@
 #pragma once
+#include"AddProduct.cpp"
 #include"Product.cpp"
 using namespace std;
 
-class InvoiceBilling:public Product
+class InvoiceBilling
 {
 private:
 
@@ -11,7 +12,7 @@ public:
 	InvoiceBilling() {}
 	~InvoiceBilling() {}
 
-	void PrintInvoice(vector<Product>& addedProduct )
+	void PrintInvoice(vector<AddedProduct>& addedProduct )
 	{
 
 	}

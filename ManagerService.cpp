@@ -21,88 +21,103 @@ private:
 public:
 	void LogInAsManager()
 	{
-	START:
-		menu.DisplayManagerMenu();
-		option = _getche();
-		switch (option)
+		do
 		{
-		case '1':
-			system("cls");
-			product.CreateProduct();
-			product.SaveToProduct(product);
-			system("pause");
-			goto START;
-			break;
-		case '2':
-			system("cls");
-			cout << "======================================================================================================" << endl;
-			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
-			product.LoadFromProduct();
-			system("pause");
-			goto START;
+			menu.DisplayManagerMenu();
+			option = _getche();
+			switch (option)
+			{
+			case '1':
+				system("cls");
+				cout << "\t\t\t\t\tCreate Product....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				product.CreateProduct();
+				product.SaveToProduct(product);
+				cout << "Product Created" << endl;
+				system("pause");
+				system("cls");
+				break;
+			case '2':
+				system("cls");
+				cout << "\t\t\t\t\tDisplay all Product....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				menu.DisplayProductHeader();
+				product.LoadFromProduct();
+				system("pause");
+				system("cls");
+				break;
+			case '3':
+				system("cls");
+				cout << "\t\t\t\t\tUpdate Product....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				menu.DisplayProductHeader();
+				product.LoadFromProduct();
+				cout << "Enter product name : "; cin >> name;
+				product.UpdateProduct(name);
+				cout << "Product updated...." << endl;
+				system("pause");
+				system("cls");
+				break;
+			case '4':
+				system("cls");
+				cout << "\t\t\t\t\tDelete Product....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				menu.DisplayProductHeader();
+				product.LoadFromProduct();
+				cout << "Enter product Name : "; cin >> name;
+				product.DeleteProduct(name);
+				cout << "Product deleted...." << endl;
+				system("pause");
+				system("cls");
+				break;
+			case '5':
+				system("cls");
+				cout << "\t\t\t\t\tCreate Cashier Account....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				account.CreateUser(2);// 2 is for cashier role
+				service.SignUp(account);
+				cout << "Cashier Account Created...." << endl;
+				system("pause");
+				system("cls");
+				break;
+			case '6':
+				system("cls");
+				cout << "\t\t\t\t\tUpdate Cashier Account....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				service.LoadFromUser("cashier");
+				cout << "Enter cashier name to update : "; cin >> name;
+				service.UpdateUser(name);
+				cout << "Cashier Account Updated...." << endl;
+				system("pause");
+				system("cls");
+				break;
+			case '7':
+				system("cls");
+				cout << "\t\t\t\t\tDelete Cashier Account....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				service.LoadFromUser("cashier");
+				cout << "\t\t\t\tEnter a cashier to DELETE : "; cin >> name;
+				service.DeleteUser(name);
+				cout << "Cashier Account Deleted...." << endl;
+				system("pause");
+				system("cls");
+				break;
+			case '8':
+				system("cls");
+				cout << "\t\t\t\t\tDisplay Cashier Account....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				service.LoadFromUser("cashier");
+				system("pause");
+				system("cls");
+				break;
+			case '9':
+				system("cls");
 
-			break;
-		case '3':
-			system("cls");
-			cout << "======================================================================================================" << endl;
-			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
-			product.LoadFromProduct();
-			cout << "Enter product name : "; cin >> name;
-			product.UpdateProduct(name);
-			system("pause");
-			goto START;
-
-			break;
-		case '4':
-			system("cls");
-			cout << "======================================================================================================" << endl;
-			cout << "|| No\t|| product name\t\t\t||price\t\t\t|| quantity\t\t\t|| Discount\t||" << endl;
-			product.LoadFromProduct();
-			cout << "Enter product Name : "; cin >> name;
-			product.DeleteProduct(name);
-			system("pause");
-			goto START;
-
-			break;
-		case '5':
-			system("cls");
-			account.CreateUser(2);// 2 is for cashier role
-			service.SignUp(account);
-			system("pause");
-			goto START;
-			break;
-		case '6':
-			system("cls");
-			service.LoadFromUser("cashier");
-			cout << "Enter cashier name to update : "; cin >> name;
-			service.UpdateUser(name);
-			system("pause");
-			goto START;
-
-			break;
-		case '7':
-			system("cls");
-			service.LoadFromUser("cashier");
-			cout << "\t\t\t\tEnter a cashier to DELETE : "; cin >> name;
-			service.DeleteUser(name);
-			system("pause");
-			goto START;
-
-			break;
-		case '8':
-			system("cls");
-			service.LoadFromUser("cashier");
-			system("pause");
-			goto START;
-
-			break;
-		case '9':
-			system("cls");
-
-			break;
-		case '0':
-			exit(1);
-			break;
-		}
+				break;
+			case '0':
+				exit(1);
+				break;
+			}
+		} while (option != '9');
 	}
 };
