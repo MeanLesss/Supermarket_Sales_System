@@ -3,7 +3,7 @@
 #include<vector>
 #include<conio.h>
 #include"Menu.cpp"
-#include"AddProduct.cpp"
+#include"AddToCart.cpp"
 #include"Product.cpp"
 #include"InvoiceBilling.cpp"
 using namespace std;
@@ -12,11 +12,11 @@ class ProductService
 {
 private:
 	Menu menu;
-	AddedProduct addedProduct;
-	vector<AddedProduct> storingProduct;
+	vector<Product> storingProduct;
 	Product product;
 	InvoiceBilling invoice;
 
+	unsigned int size;
 	int count = 0;
 	char option;
 	int id;
@@ -27,79 +27,87 @@ public:
 
 	void Addtocart()//billing in Invoice.cpp
 	{
+		storingProduct.clear();
 		do
 		{
+			cout << "\t\t\t\t\tAdd To Cart....." << endl;
+			cout << "\t\t\t\t========================================" << endl;
 			menu.DisplayProductHeader();
-			FillVector();		
-		START:
-
+			product.LoadFromProduct();
 			cout << "Enter product ID to add to cart : ";
 			cin >> id;
 			cout << "Enter the amount of product : ";
 			cin >> quantity;
 			//product
-			addedProduct = AddedProduct(id, quantity);
-			storingProduct.push_back(addedProduct);
-			for (unsigned int i = 0 ; i < storingProduct.size(); i++)
+			int count = 0;
+			ifstream fin;
+			fin.open(PRODUCT_FILE, ios::in | ios::binary);
+			if (!fin)
 			{
-
-				/*compare the product with the search and then add the product to 
-				the storing product array*/
-				storingProduct[i].Display();//the dispaly work
+				cerr << "File open failed";
+				exit(1);
 			}
-			cout << "Do you want to add more items?(y/n) : "; 
+			while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
+			{
+				if (id == product.getProductNo())
+				{
+					cout << "Product ADDED!!" << endl;
+					storingProduct.push_back(product);
+					PrintAddedProduct(storingProduct);
+					break;
+				}
+				else
+				{
+					cout << "Sorry Product NOT FOUND!!" << endl;
+				}
+			}
+			fin.close();
+			cout << "1.Add more item" << endl
+				<< "2.Procced payout" << endl
+				<< "3.Remove item" << endl
+				<< "0.exit" << endl
+				<< "Enter option : ";
 			option = _getche();
 			switch (option)
 			{
-			case 'y':
+			case '1':
 			case 'Y':
-				goto START;
+				system("cls");
+
 				break;
-			case 'n':
+			case '2':
 			case 'N':
 				system("cls");
-				//invoice.PrintInvoice(addedProduct);
-				system("pause");
+				invoice.PrintInvoice(storingProduct);
+				storingProduct.clear();
+				option = '0';
 				break;
+			case '3':
+				system("cls");
+				cout << "\t\t\t\t\tRemove item....." << endl;
+				cout << "\t\t\t\t========================================" << endl;
+				PrintAddedProduct(storingProduct);
+				cout << "Enter ID to REMOVE item : "; cin >> id;
+				RemoveItem(id);
+				cout << "Item REMOVED" << endl;
+				system("pause");
+				break; 
 			}
-
 			//if no print invoice;
 		} while (option != '0');
 	}
-	vector<Product> FillVector()
+	void PrintAddedProduct(vector<Product>& storingProduct)
 	{
-		int count = 0;
-		Product product;
-		vector<Product> addProduct;
-		ifstream fin;
-		fin.open(PRODUCT_FILE, ios::in | ios::binary);
-		if (!fin)
+		unsigned int size = storingProduct.size();
+		for (unsigned int i = 0; i < size; i++)
 		{
-			cerr << "File open failed";
-			exit(1);
+			storingProduct[i].DisplayInCart(quantity);
 		}
-		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
-		{
-			product.setProductNo(count);
-			if (fin.eof()) { break; }
-			addProduct.push_back(product);
-			count++;
-		}
-		fin.close();
+	}
+	void RemoveItem(int id)
+	{
+		storingProduct.erase(storingProduct.begin()+id);
+	}
 
-		unsigned int size = addProduct.size();
-		for (unsigned int i = 0; i < size; i++)
-		{
-			addProduct[i].DisplayProduct();
-		}
-		return addProduct;
-	}
-	void PrintVector(vector<Product>& addedproduct)
-	{
-		unsigned int size = addedproduct.size();
-		for (unsigned int i = 0; i < size; i++)
-		{
-			cout << addedproduct[i].getProductName();
-		}
-	}
+	
 };

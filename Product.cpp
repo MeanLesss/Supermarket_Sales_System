@@ -51,6 +51,15 @@ public:
 	{
 		this->ProductNo = ProductNo;
 	}
+
+	int getQuantity()
+	{
+		return Quantity;
+	}
+	void setQuantity(int quantity)
+	{
+		this->Quantity = quantity;
+	}
 	void CreateProduct() 
 	{
 		cout << "\t\t\t\tCreate product : Note (do NOT use space for product name use \"_\" instead)" << endl << endl;
@@ -151,7 +160,6 @@ public:
 			product.DisplayProduct();
 			count++;
 		}
-
 		fin.close();
 	}
 
@@ -210,6 +218,16 @@ public:
 		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << Quantity << "pcs\t\t|| " << Discount << "%\t\t||" << endl;
 		cout << "==================================================================================================" << endl;
 	}
-
+	void DisplayInCart(int quantity)
+	{
+		//display -> id -> name -> quantity -> discount -> total for the product
+		float total;
+		int newQuantity;
+		newQuantity = Quantity - quantity;
+		Quantity = newQuantity;
+		cout << "==================================================================================================" << endl;
+		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << quantity << "pcs\t\t|| " << Discount << "%\t\t||" << endl;
+		cout << "==================================================================================================" << endl;
+	}
 
 };

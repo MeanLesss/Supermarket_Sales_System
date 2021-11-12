@@ -1,5 +1,5 @@
 #pragma once
-#include"AddProduct.cpp"
+#include"AddToCart.cpp"
 #include"Product.cpp"
 using namespace std;
 
@@ -12,9 +12,13 @@ public:
 	InvoiceBilling() {}
 	~InvoiceBilling() {}
 
-	void PrintInvoice(vector<AddedProduct>& addedProduct )
+	void PrintInvoice(vector<Product> storingProduct)
 	{
+		cout << "\t\t\t\t\t.....INVOICE....." << endl;
+		cout << "\t\t\t\t========================================" << endl;
 
+		//don't forget to delete vector after print the invoice
+		storingProduct.clear();
 	}
 };
 
