@@ -69,7 +69,7 @@
     <ClCompile Include="InvoiceBilling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AddToCart.cpp">
+    <ClCompile Include="CartProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

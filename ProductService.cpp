@@ -3,7 +3,7 @@
 #include<vector>
 #include<conio.h>
 #include"Menu.cpp"
-#include"AddToCart.cpp"
+#include"CartProduct.cpp"
 #include"Product.cpp"
 #include"InvoiceBilling.cpp"
 using namespace std;
@@ -12,15 +12,22 @@ class ProductService
 {
 private:
 	Menu menu;
-	vector<Product> storingProduct;
+	CartProduct cartProduct;
+	vector<CartProduct> storingProduct;
 	Product product;
 	InvoiceBilling invoice;
+
 
 	unsigned int size;
 	int count = 0;
 	char option;
 	int id;
 	int quantity;
+	int No;
+
+	string ProductName;
+	float Price;
+	float Discount;
 public:
 	ProductService() {}
 	~ProductService() {}
@@ -30,6 +37,8 @@ public:
 		storingProduct.clear();
 		do
 		{
+			count = 0;
+			No = 0;
 			cout << "\t\t\t\t\tAdd To Cart....." << endl;
 			cout << "\t\t\t\t========================================" << endl;
 			menu.DisplayProductHeader();
@@ -39,7 +48,6 @@ public:
 			cout << "Enter the amount of product : ";
 			cin >> quantity;
 			//product
-			int count = 0;
 			ifstream fin;
 			fin.open(PRODUCT_FILE, ios::in | ios::binary);
 			if (!fin)
@@ -49,22 +57,34 @@ public:
 			}
 			while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
 			{
+				product.setProductNo(No);//i don't set it manually becasue when it have more product it easier to let it load
+				
+				//if (fin.eof()) { break; }
+
 				if (id == product.getProductNo())
 				{
+					system("cls");
 					cout << "Product ADDED!!" << endl;
-					storingProduct.push_back(product);
+					ProductName = product.getProductName();
+					Price = product.getPrice();
+					Discount = product.getDis();
+					cartProduct = CartProduct(ProductName, id, Price, quantity, Discount);
+					storingProduct.push_back(cartProduct);
 					PrintAddedProduct(storingProduct);
+					count++;
 					break;
 				}
-				else
-				{
-					cout << "Sorry Product NOT FOUND!!" << endl;
-				}
+				No++;
+			}
+			if(count == 0)
+			{
+				cout << "Sorry Product NOT FOUND!!" << endl;
 			}
 			fin.close();
 			cout << "1.Add more item" << endl
 				<< "2.Procced payout" << endl
 				<< "3.Remove item" << endl
+				<< "4.Back to menu" << endl
 				<< "0.exit" << endl
 				<< "Enter option : ";
 			option = _getche();
@@ -78,7 +98,7 @@ public:
 			case '2':
 			case 'N':
 				system("cls");
-				invoice.PrintInvoice(storingProduct);
+				//invoice.PrintInvoice(storingProduct);
 				storingProduct.clear();
 				option = '0';
 				break;
@@ -92,16 +112,18 @@ public:
 				cout << "Item REMOVED" << endl;
 				system("pause");
 				break; 
+			case '0':
+				exit(1);
 			}
 			//if no print invoice;
-		} while (option != '0');
+		} while (option != '4');
 	}
-	void PrintAddedProduct(vector<Product>& storingProduct)
+	void PrintAddedProduct(vector<CartProduct> storingProduct)
 	{
 		unsigned int size = storingProduct.size();
 		for (unsigned int i = 0; i < size; i++)
 		{
-			storingProduct[i].DisplayInCart(quantity);
+			storingProduct[i].DisplayInCart();
 		}
 	}
 	void RemoveItem(int id)

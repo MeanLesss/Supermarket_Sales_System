@@ -1,4 +1,9 @@
--Fix the billing solution
--refatoring read and write file
--add README to github
--recheck overload memory from classes
+-Fix the add to cart	[done]
+
+-Fix the billing solution	[not yet]
+
+-refatoring read and write file		[not yet]
+
+-add README to github	[not yet]
+
+-recheck overload memory from classes	 [not yet]
