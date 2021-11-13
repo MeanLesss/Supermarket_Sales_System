@@ -20,20 +20,28 @@ private:
 
 	unsigned int size;
 	int count = 0;
+	int countDelete = 0;
 	char option;
 	int id;
 	int quantity;
 	int No;
 
+
 	string ProductName;
 	float Price;
 	float Discount;
+
+	
+
 public:
 	ProductService() {}
 	~ProductService() {}
 
+//Not enough time to refactor this part
+
 	void Addtocart()//billing in Invoice.cpp
 	{
+
 		storingProduct.clear();
 		do
 		{
@@ -59,8 +67,6 @@ public:
 			{
 				product.setProductNo(No);//i don't set it manually becasue when it have more product it easier to let it load
 				
-				//if (fin.eof()) { break; }
-
 				if (id == product.getProductNo())
 				{
 					system("cls");
@@ -97,21 +103,28 @@ public:
 				break;
 			case '2':
 			case 'N':
+			{
 				system("cls");
-				//invoice.PrintInvoice(storingProduct);
+				invoice.PrintInvoice(storingProduct);
 				storingProduct.clear();
-				option = '0';
+				option = '4';
+				system("pause");
 				break;
+			}
 			case '3':
 				system("cls");
 				cout << "\t\t\t\t\tRemove item....." << endl;
 				cout << "\t\t\t\t========================================" << endl;
 				PrintAddedProduct(storingProduct);
+				countDelete = 0;
 				cout << "Enter ID to REMOVE item : "; cin >> id;
-				RemoveItem(id);
-				cout << "Item REMOVED" << endl;
+
+				cout << "Sorry this feature will available in the next update!"<<endl;
+
+				//cout << "Item REMOVED" << endl;
+				option = '4';
 				system("pause");
-				break; 
+				break;
 			case '0':
 				exit(1);
 			}
@@ -126,10 +139,10 @@ public:
 			storingProduct[i].DisplayInCart();
 		}
 	}
-	void RemoveItem(int id)
+	/*void RemoveItem(int id)
 	{
 		storingProduct.erase(storingProduct.begin()+id);
-	}
+	}*/
 
 	
 };

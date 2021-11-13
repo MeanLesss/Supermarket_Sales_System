@@ -7,19 +7,35 @@ using namespace std;
 class InvoiceBilling
 {
 private:
+	CartProduct cartProduct;
 
 
+
+	float subtotal;
 public:
 	InvoiceBilling() {}
 	~InvoiceBilling() {}
 
-	void PrintInvoice(vector<Product> storingProduct)
+	void PrintInvoice(vector<CartProduct> storingProduct) 
 	{
-		cout << "\t\t\t\t\t.....INVOICE....." << endl;
-		cout << "\t\t\t\t========================================" << endl;
+		unsigned int size = storingProduct.size();
+
+		cout << "===========================================================================================================" << endl;
+		cout << "......................................................INVOICE.............................................." << endl;
+		cout << "===========================================================================================================" << endl;
+		for (unsigned int i = 0; i < size; i++)
+		{
+			storingProduct[i].DisplayInCart();
+			subtotal += storingProduct[i].getTotal();
+		}
+		cout << "===========================================================================================================" << endl;
+		cout << "|| Sub Total ____________________________________________________________________________________$" << subtotal << endl;
+		cout << "===========================================================================================================" << endl;
+		cout << "                                               --See you again soon--" << endl;
+
 
 		//don't forget to delete vector after print the invoice
-		storingProduct.clear();
+		//storingProduct.clear();
 	}
 };
 

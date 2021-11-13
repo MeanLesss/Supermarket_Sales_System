@@ -13,6 +13,9 @@ private:
 	int quantity;
 	float Discount;
 
+	float total;
+
+
 public:
 	CartProduct() {}
 	
@@ -26,14 +29,28 @@ public:
 		this->Discount = Discount;
 	}
 	~CartProduct() {}
+
+	int getID()
+	{
+		return ProductNo;
+	}
+	string getName()
+	{
+		return ProductName;
+	}
+	float getTotal()
+	{
+		return total;
+	}
 	void DisplayInCart()
 	{
 		//display -> id -> name -> quantity -> discount -> total for the product
-		float total;
 		
-		cout << "==================================================================================================" << endl;
-		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << quantity << "pcs\t\t|| " << Discount << "%\t\t||" << endl;
-		cout << "==================================================================================================" << endl;
+		total = (Price * quantity) - ((Price * Discount) / 100);
+		
+		cout << "===========================================================================================================" << endl;
+		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << quantity << "pcs\t\t|| " << Discount << "%\t\t||" << "total : $" << total << endl;
+		cout << "===========================================================================================================" << endl;
 	}
 
 

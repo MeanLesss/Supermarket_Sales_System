@@ -1,6 +1,8 @@
 -Fix the add to cart	[done]
 
--Fix the billing solution	[not yet]
+-Fix the billing solution	[done]
+
+-update to stock [not yet]
 
 -refatoring read and write file		[not yet]
 
