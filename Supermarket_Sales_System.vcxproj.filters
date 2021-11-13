@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\APPLICATION">
-      <UniqueIdentifier>{c5938b5e-15cb-4342-9acb-1a5794d9230b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,9 +39,6 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Counter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ServiceApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,9 +50,6 @@
     </ClCompile>
     <ClCompile Include="LogInAuthentication.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>Source Files\APPLICATION</Filter>
     </ClCompile>
     <ClCompile Include="ExceptionHandling.cpp">
       <Filter>Source Files</Filter>

@@ -4,6 +4,6 @@
 
 -refatoring read and write file		[not yet]
 
--add README to github	[not yet]
+-add README to github	[done]
 
 -recheck overload memory from classes	 [not yet]
