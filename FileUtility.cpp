@@ -1,10 +1,15 @@
+#pragma once
 #include <iostream>
 #include <fstream>
+#include<vector>
 #include"AccountUser.cpp"
+#include"CartProduct.cpp"
+
 
 using namespace std;
 
-class FileUtil{
+class FileIO
+{
 private:
     ofstream fout;
     ifstream fin;
@@ -39,6 +44,26 @@ public:
        fin.read(reinterpret_cast<char*>(&account),sizeof(AccountUser));
     }
   
+    void WriteDataToFileReport(vector<CartProduct> storingProduct)
+    {
+        unsigned int size = storingProduct.size();
+        for (unsigned int i = 0; i < size; i++)
+        {
+            fout.write(reinterpret_cast<char*>(&storingProduct[i]), sizeof(CartProduct));
+        }
+
+    }
+    void ReadDataFromReport(CartProduct cartProduct)
+    {
+        while (fin.read(reinterpret_cast<char*>(&cartProduct), sizeof(CartProduct)))
+        {
+            if(fin.eof()) { break;}
+            cartProduct.DisplayProductInCart();
+            
+        }
+    }
+
+
     void CloseDataToFile()
     {
         fout.close();

@@ -2,9 +2,9 @@
 
 -Fix the billing solution	[done]
 
--update to stock [not yet]
+-update to stock [done]
 
--refatoring read and write file		[cannot use read method 50% done]
+-refatoring read and write file		[done]
 
 -add README to github	[done]
 

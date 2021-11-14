@@ -2,18 +2,21 @@
 #include"Cashier.cpp"
 #include"ProductService.cpp"
 #include"Menu.cpp"
+#include"Report.cpp"
 
 class CashierService:public ProductService
 {
 private:
-	
+	Menu menu;
+	Product product;
+	Report report;
+
 	char option;
 
 public:
 	CashierService():option(' ') {}
 	//~CashierService() {}
-	Menu menu;
-	Product product;
+	
 
 	void LogInAsCashier()
 	{
@@ -30,9 +33,7 @@ public:
 			break;
 		case '2':
 			system("cls");
-
-
-
+			report.LoadSaleReport();
 			system("pause");
 			goto START;
 			break;

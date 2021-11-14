@@ -155,12 +155,14 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductService.cpp" />
+    <ClCompile Include="Report.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="ServiceApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="product.dat" />
+    <None Include="report.dat" />
     <None Include="user.dat" />
   </ItemGroup>
   <ItemGroup>

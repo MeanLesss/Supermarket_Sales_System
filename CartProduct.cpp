@@ -52,9 +52,18 @@ public:
 	}
 	void DisplayProductInCart()
 	{
+		float sellingPrice;
 		//display -> id -> name -> quantity -> discount -> total for the product
-		
-		total = (Price * quantity) - ((Price * Discount) / 100);
+		if (Discount != 0)
+		{
+			sellingPrice = Price * ((100 - Discount) / 100);
+			total = Price - sellingPrice;
+			total *= quantity;
+		}
+		else
+		{
+			total = Price * quantity;
+		}
 		
 		cout << "===========================================================================================================" << endl;
 		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << quantity << "pcs\t\t|| " << Discount << "%\t\t||" << "total : $" << total << endl;

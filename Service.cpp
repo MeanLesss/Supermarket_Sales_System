@@ -12,7 +12,6 @@
 #include"AccountUser.cpp"
 using namespace std;
 const char USER_FILE[] = "user.dat";
-const char REPORT_FILE[] = "report.dat";
 
 class Service 
 {
@@ -24,7 +23,7 @@ private:
 
 	string UserName;
 	string PassWord;
-	FileUtil fileIO;
+	FileIO fileIO;
 
 public:
 

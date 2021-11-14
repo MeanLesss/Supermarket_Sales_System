@@ -1,13 +1,14 @@
 #pragma once
 #include"CartProduct.cpp"
 #include"Product.cpp"
+#include"Report.cpp"
 using namespace std;
 
 class InvoiceBilling
 {
 private:
 	CartProduct cartProduct;
-
+	Report report;
 
 
 	float subtotal;
@@ -32,6 +33,7 @@ public:
 		cout << "===========================================================================================================" << endl;
 		cout << "                                               --See you again soon--" << endl;
 
+		report.SaveSaleReport(storingProduct);
 		//don't forget to delete vector after print the invoice
 		//storingProduct.clear();
 

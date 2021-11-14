@@ -66,11 +66,15 @@
     <ClCompile Include="FileUtility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Report.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="user.dat" />
     <None Include="product.dat" />
+    <None Include="report.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />
