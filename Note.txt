@@ -4,7 +4,7 @@
 
 -update to stock [not yet]
 
--refatoring read and write file		[not yet]
+-refatoring read and write file		[cannot use read method 50% done]
 
 -add README to github	[done]
 

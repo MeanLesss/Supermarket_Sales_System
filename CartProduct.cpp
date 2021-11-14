@@ -38,11 +38,15 @@ public:
 	{
 		return ProductName;
 	}
+	int getQuantity()
+	{
+		return quantity;
+	}
 	float getTotal()
 	{
 		return total;
 	}
-	void DisplayInCart()
+	void DisplayProductInCart()
 	{
 		//display -> id -> name -> quantity -> discount -> total for the product
 		

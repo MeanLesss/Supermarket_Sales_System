@@ -63,11 +63,14 @@
     <ClCompile Include="CartProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="user.dat" />
     <None Include="product.dat" />
+    <None Include="user.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />

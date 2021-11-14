@@ -5,6 +5,7 @@
 #include<fstream>
 #include<vector>
 #include<stdio.h>
+#include"FileUtility.cpp"
 #include"Cashier.cpp"
 #include"Manager.cpp"
 #include"Product.cpp"
@@ -23,7 +24,7 @@ private:
 
 	string UserName;
 	string PassWord;
-	
+	FileUtil fileIO;
 
 public:
 
@@ -36,15 +37,9 @@ public:
 	//Manager file in out
 	void SignUp(AccountUser& account)//add admin
 	{
-		ofstream fout;
-		fout.open(USER_FILE, ios::out | ios::app | ios::binary);
-		if (!fout) {
-			// throw FileNotFoundException("File open failed");
-			cerr << "File open failed" << endl;
-			system("pause");
-		}
-		fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
-		fout.close();
+		fileIO.OpenDataToFile(USER_FILE);
+		fileIO.WriteDataToFileUser(account);
+		fileIO.CloseDataToFile();
 	}
 
 	//void LoadFromUser(string role)
@@ -53,9 +48,9 @@ public:
 		int count = 0;
 		ifstream fin;
 		fin.open(USER_FILE, ios::in | ios::binary);
-		//fin.read(reinterpret_cast<char*>(&manager), sizeof(Manager))
-		if (!fin) {
-			// throw FileNotFoundException("File open failed");
+		
+		if (!fin) 
+		{
 			cerr << "File open failed" << endl;
 		}
 		else
@@ -96,30 +91,43 @@ public:
 
 	void DeleteUser(string username)
 	{
+		int count = 0; //account found detector
 		AccountUser account;
 		ifstream fin;
 		ofstream fout;
 
+		fileIO.OpenDataToFile("temp.dat");
 		fin.open(USER_FILE, ios::in | ios::binary);
-		if (!fin) 
+
+		if (!fin)
 		{
 			cerr << "File open failed";
 			exit(1);
 		}
-		fout.open("temp.dat", ios::out | ios::app | ios::binary);
-		fin.seekg(0, ios::beg);
-		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser))) 
+		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
 		{
-			/*fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser));*/
-			
 			if (fin.eof()) { break; }
-			if (account.getUsername() != username) 
+			if (account.getUsername() != username)
 			{
-				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
+				fileIO.WriteDataToFileUser(account);
+			}
+			else
+			{
+				count++;
 			}
 		}
+		if (count == 0)
+		{
+			cout << "\t\t\t\tAccount not found" << endl;
+		}
+		else
+		{
+			cout << "\t\t\t\tUser deleted" << endl;
+		}
+
 		fin.close();
-		fout.close();
+		fileIO.CloseDataToFile();
+
 		int res = 0;
 		if (remove("user.dat") != 0)
 		{
@@ -129,7 +137,7 @@ public:
 		res = rename("temp.dat","user.dat");
 		if (res == 0)
 		{
-			cout << "\t\t\t\tUser deleted" << endl;
+			cout << "File deleted" << endl;
 		}
 		else
 		{
@@ -140,35 +148,38 @@ public:
 
 	void UpdateUser(string username)
 	{
+		int count = 0;
 		AccountUser account;
 		ifstream fin;
-		ofstream fout;
 
+		fileIO.OpenDataToFile("temp.dat");
 		fin.open(USER_FILE, ios::in | ios::binary);
+
 		if (!fin)
 		{
 			cerr << "File open failed";
 			exit(1);
 		}
-		fout.open("temp.dat", ios::out | ios::app | ios::binary);
-		fin.seekg(0, ios::beg);
 		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
 		{
-			/*fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser));*/
-
 			if (fin.eof()) { break; }
 			if (account.getUsername() != username)
 			{
-				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
+				fileIO.WriteDataToFileUser(account);
 			}
 			else
 			{
 				account.CreateUser(2);
-				fout.write(reinterpret_cast<char*>(&account), sizeof(AccountUser));
+				fileIO.WriteDataToFileUser(account);
+				count++;
 			}
 		}
+		if (count == 0)
+		{
+			cout << "Account not found" << endl;
+		}
 		fin.close();
-		fout.close();
+		fileIO.CloseDataToFile();
 		int res = 0;
 		if (remove("user.dat") != 0)
 		{

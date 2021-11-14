@@ -96,7 +96,7 @@ public:
 		}
 		fout.open("temp.dat", ios::out | ios::app | ios::binary);
 		fin.seekg(0, ios::beg);
-		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product))) // I use this method because it read better than the function read in while(argument)
+		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
 		{
 			if (fin.eof()) { break; }
 			if (product.getProductName() != productname)

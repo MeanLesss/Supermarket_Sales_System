@@ -19,12 +19,12 @@ private:
 
 
 	unsigned int size;
-	int count = 0;
+	int count = 0;//use as a error method????!!
 	int countDelete = 0;
 	char option;
 	int id;
 	int quantity;
-	int No;
+	int No;// to set product No to the product in vector
 
 
 	string ProductName;
@@ -106,9 +106,12 @@ public:
 			{
 				system("cls");
 				invoice.PrintInvoice(storingProduct);
+				invoice.UpdateStock(storingProduct);
 				storingProduct.clear();
 				option = '4';
 				system("pause");
+				system("cls");
+				
 				break;
 			}
 			case '3':
@@ -117,13 +120,14 @@ public:
 				cout << "\t\t\t\t========================================" << endl;
 				PrintAddedProduct(storingProduct);
 				countDelete = 0;
-				cout << "Enter ID to REMOVE item : "; cin >> id;
+				//cout << "Enter ID to REMOVE item : "; cin >> id;
 
 				cout << "Sorry this feature will available in the next update!"<<endl;
 
 				//cout << "Item REMOVED" << endl;
-				option = '4';
+				//option = '4';
 				system("pause");
+				system("cls");
 				break;
 			case '0':
 				exit(1);
@@ -136,7 +140,7 @@ public:
 		unsigned int size = storingProduct.size();
 		for (unsigned int i = 0; i < size; i++)
 		{
-			storingProduct[i].DisplayInCart();
+			storingProduct[i].DisplayProductInCart();
 		}
 	}
 	/*void RemoveItem(int id)

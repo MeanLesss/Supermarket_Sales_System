@@ -76,7 +76,7 @@ public:
 				cout << "\t\t\t\t========================================" << endl;
 				account.CreateUser(2);// 2 is for cashier role
 				service.SignUp(account);
-				cout << "Cashier Account Created...." << endl;
+				cout << "Cashier Account Updated...." << endl;
 				system("pause");
 				system("cls");
 				break;
@@ -98,7 +98,7 @@ public:
 				service.LoadFromUser("cashier");
 				cout << "\t\t\t\tEnter a cashier to DELETE : "; cin >> name;
 				service.DeleteUser(name);
-				cout << "Cashier Account Deleted...." << endl;
+				cout << "Cashier Account Updated...." << endl;
 				system("pause");
 				system("cls");
 				break;
