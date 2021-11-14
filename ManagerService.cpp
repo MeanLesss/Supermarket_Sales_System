@@ -5,6 +5,7 @@
 #include"Cashier.cpp"
 #include"Menu.cpp"
 #include"AccountUser.cpp"
+
 class ManagerService
 {
 private:
@@ -32,7 +33,7 @@ public:
 				cout << "\t\t\t\t\tCreate Product....." << endl;
 				cout << "\t\t\t\t========================================" << endl;
 				product.CreateProduct();
-				product.SaveToProduct(product);
+				service.SaveToProduct(product);
 				cout << "Product Created" << endl;
 				system("pause");
 				system("cls");
@@ -42,7 +43,7 @@ public:
 				cout << "\t\t\t\t\tDisplay all Product....." << endl;
 				cout << "\t\t\t\t========================================" << endl;
 				menu.DisplayProductHeader();
-				product.LoadFromProduct();
+				service.LoadFromProduct();
 				system("pause");
 				system("cls");
 				break;
@@ -51,9 +52,9 @@ public:
 				cout << "\t\t\t\t\tUpdate Product....." << endl;
 				cout << "\t\t\t\t========================================" << endl;
 				menu.DisplayProductHeader();
-				product.LoadFromProduct();
+				service.LoadFromProduct();
 				cout << "Enter product name : "; cin >> name;
-				product.UpdateProduct(name);
+				service.UpdateProduct(name);
 				cout << "Product updated...." << endl;
 				system("pause");
 				system("cls");
@@ -63,9 +64,9 @@ public:
 				cout << "\t\t\t\t\tDelete Product....." << endl;
 				cout << "\t\t\t\t========================================" << endl;
 				menu.DisplayProductHeader();
-				product.LoadFromProduct();
+				service.LoadFromProduct();
 				cout << "Enter product Name : "; cin >> name;
-				product.DeleteProduct(name);
+				service.DeleteProduct(name);
 				cout << "Product deleted...." << endl;
 				system("pause");
 				system("cls");

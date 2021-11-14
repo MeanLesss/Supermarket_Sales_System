@@ -34,8 +34,6 @@ public:
 		cout << "                                               --See you again soon--" << endl;
 
 		report.SaveSaleReport(storingProduct);
-		//don't forget to delete vector after print the invoice
-		//storingProduct.clear();
 
 
 	}

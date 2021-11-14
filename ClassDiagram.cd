@@ -17,21 +17,21 @@
   <Class Name="Menu">
     <Position X="10" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAYAAAgAAAAAAgAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgQgAAAAAAAAAAAIAAAAAABAAAAAAAA=</HashCode>
       <FileName>Menu.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Product">
     <Position X="7.25" Y="0.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAQQAAAAAEAAAIQiAAIAAAAAAQgAAgAAIACA=</HashCode>
+      <HashCode>ICACAAIAAQAAAAAAEAAAIBAAAIAAACAAAgiEgAAIAAA=</HashCode>
       <FileName>Product.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service">
     <Position X="7.25" Y="6.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAgAACAAECAAACAAEAAAAQAAAAQIAAAgAAAA=</HashCode>
+      <HashCode>AAAAAgAAAgQACAAECAAACAiEAQAAQAAAQwAAAAAAAAA=</HashCode>
       <FileName>Service.cpp</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,28 +45,28 @@
   <Class Name="CashierService">
     <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEBAAAAAAgAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AEBEAAAAAgAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CashierService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LogInAuthentication">
     <Position X="14" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAAAACAAIAAAEAAAAAAAIAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAQAAAAAADAAIAAAEAAAAAAAIAAAAQAAAAAA=</HashCode>
       <FileName>LogInAuthentication.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ManagerService">
     <Position X="13.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAgAAAAAICAAAAAgEAAAEAAAAAEAAQAAAAgA=</HashCode>
+      <HashCode>QAAAAAAAAgAAAAAICAAAAAgEAAAEAAAAAEAAQAAAAAA=</HashCode>
       <FileName>ManagerService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ServiceApp">
     <Position X="15.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQAAgAgEAAAEAgACAEAQQAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAAAAAAAQAAgAgEAAAEAgACAEAQQAAAAAA=</HashCode>
       <FileName>ServiceApp.cpp</FileName>
     </TypeIdentifier>
   </Class>
@@ -77,11 +77,39 @@
       <FileName>ExceptionHandling.cpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProductService" Collapsed="true">
-    <Position X="18.25" Y="1.25" Width="1.5" />
+  <Class Name="ProductService">
+    <Position X="1.25" Y="2.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAABIAAAAwAAQAAKBIIARAgAACAAAACAAlAAgAAAAgA=</HashCode>
       <FileName>ProductService.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CartProduct">
+    <Position X="17.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAARAAAACAAEAAAAAAAIAAACCAAkAEAAAIAAQ=</HashCode>
+      <FileName>CartProduct.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileIO">
+    <Position X="22.75" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAEAAcAAIECgBQACBAAADAACAAAAgAAAAAAAAAI=</HashCode>
+      <FileName>FileUtility.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvoiceBilling">
+    <Position X="20" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQAAAAAQAAAAAAAQAAAAAAAAAAAAAAAACAEAAA=</HashCode>
+      <FileName>InvoiceBilling.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Report">
+    <Position X="20.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAQAAAAAAAAABCAAAAAAAAAgAAAAAABAA=</HashCode>
+      <FileName>Report.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -6,6 +6,7 @@
 #include"CartProduct.cpp"
 #include"Cashier.cpp"
 #include"Manager.cpp"
+#include"Product.cpp"
 using namespace std;
 
 class FileIO
@@ -127,21 +128,55 @@ public:
         }
     }
 
+    void WriteDataToProduct(Product product)
+    {
+        fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+    }
 
+    void WriteUpdateProduct(Product product,string productname)
+    {
+        
+        fin.seekg(0, ios::beg);
+        while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
+        {
+            if (fin.eof()) { break; }
+            if (product.getProductName() != productname)
+            {
+                fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+            }
+            else
+            {
+                product.CreateProduct();
+                fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+            }
+        }
+    }
 
+    void ReadDataFromProduct(Product product)
+    {
+        count = 0;
+        while (1)
+        {
+            fin.read(reinterpret_cast<char*>(&product), sizeof(Product));
+            product.setProductNo(count);
+            if (fin.eof()) { break; }
+            product.DisplayProduct();
+            count++;
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    void WriteDeleteProduct(Product product,string productname)
+    {
+        fin.seekg(0, ios::beg);
+        while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product))) // I use this method because it read better than the function read in while(argument)
+        {
+            if (fin.eof()) { break; }
+            if (product.getProductName() != productname)
+            {
+                fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+            }
+        }
+    }
 
     void RenameRemoveUser()
     {
@@ -162,9 +197,30 @@ public:
         }
     }
 
-
-
-
+    void RenameRmoveProduct()
+    {
+        int removeStatus = 0;
+        if (remove("product.dat") == 0)
+        {
+            //cout << "Failed to remove!" << endl;
+            cout << "Success remove!" << endl;
+        }
+        else
+        {
+            cout << "Failed to remove!!!" << endl;
+        }
+        //remove(USER_FILE);
+        int renameStatus;
+        renameStatus = rename("temp.dat", "product.dat");
+        if (renameStatus == 0)
+        {
+            cout << "Success renamed!" << endl;
+        }
+        else
+        {
+            cout << "Failed to rename!" << endl;
+        }
+    }
 
     void WriteDataToFileReport(vector<CartProduct> storingProduct)
     {

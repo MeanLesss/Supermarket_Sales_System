@@ -6,12 +6,14 @@
 #include"Menu.cpp"
 #include"CartProduct.cpp"
 #include"Product.cpp"
+#include"Service.cpp"
 #include"InvoiceBilling.cpp"
 using namespace std;
 
 class ProductService
 {
 private:
+	Service service;
 	Menu menu;
 	CartProduct cartProduct;
 	vector<CartProduct> storingProduct;
@@ -50,7 +52,7 @@ public:
 			cout << "\t\t\t\t\tAdd To Cart....." << endl;
 			cout << "\t\t\t\t========================================" << endl;
 			menu.DisplayProductHeader();
-			product.LoadFromProduct();
+			service.LoadFromProduct();
 			cout << "Enter product ID to add to cart : ";
 			cin >> id;
 			cout << "Enter the amount of product : ";
