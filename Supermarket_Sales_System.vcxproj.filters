@@ -69,8 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="product.dat" />
     <None Include="user.dat" />
+    <None Include="product.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />

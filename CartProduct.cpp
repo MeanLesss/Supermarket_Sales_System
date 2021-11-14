@@ -7,7 +7,7 @@ using namespace std;
 class CartProduct
 {
 private:
-	string ProductName;
+	char ProductName[20];
 	int ProductNo;
 	float Price;
 	int quantity;
@@ -19,9 +19,9 @@ private:
 public:
 	CartProduct() {}
 	
-	CartProduct(string ProductName, int ProductNo, float Price, int quantity, float Discount)
+	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount)
 	{
-		this->ProductName = ProductName;
+		memcpy(this->ProductName, ProductName, 20);
 		//this->ProductName = ProductName;
 		this->ProductNo = ProductNo;
 		this->Price = Price;
@@ -34,13 +34,17 @@ public:
 	{
 		return ProductNo;
 	}
-	string getName()
+	char* getName()
 	{
 		return ProductName;
 	}
 	int getQuantity()
 	{
 		return quantity;
+	}
+	void setQuantity(int quantity)
+	{
+		this->quantity = quantity;
 	}
 	float getTotal()
 	{

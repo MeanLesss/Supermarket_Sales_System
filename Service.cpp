@@ -160,6 +160,7 @@ public:
 			cerr << "File open failed";
 			exit(1);
 		}
+		fin.seekg(0, ios::beg);
 		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
 		{
 			if (fin.eof()) { break; }

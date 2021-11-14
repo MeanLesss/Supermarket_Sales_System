@@ -1,5 +1,6 @@
 # Supermarket_Sales_System
 This application can take log in authentication and sign up account for Manager and Cashier for the supermarket managerment.
+
 #Mananger : 
 - Can add item in to the stock write to file and view all product (wriite into file product.dat)
 - Can update item in the stock from file (product.dat)

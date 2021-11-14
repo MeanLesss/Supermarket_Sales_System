@@ -41,6 +41,7 @@ public:
 
 	void CreateUser(int role1)/// role indicator 1 = manager , 2 = cashier
 	{
+		cout << "\t\t\t\tCreate product : Note (do NOT use space for product name use \"_\" instead)" << endl << endl;
 		cout << "\t\t\t\tEnter username : ";
 		cin >> UserName;
 		cout << "\t\t\t\tEnter password : ";

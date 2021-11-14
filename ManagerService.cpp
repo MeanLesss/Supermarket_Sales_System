@@ -64,7 +64,7 @@ public:
 				cout << "\t\t\t\t========================================" << endl;
 				menu.DisplayProductHeader();
 				product.LoadFromProduct();
-				cout << "Enter product Name : "; //cin >> name;
+				cout << "Enter product Name : "; cin >> name;
 				product.DeleteProduct(name);
 				cout << "Product deleted...." << endl;
 				system("pause");

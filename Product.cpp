@@ -34,11 +34,17 @@ public:
 		this->Quantity = Quantity;
 		this->Discount = Discount;
 	}
+	
+
 	int getProductNo()
 	{
 		return ProductNo;
 	}
 	string getProductName() 
+	{
+		return ProductName;
+	}
+	char* getName() 
 	{
 		return ProductName;
 	}

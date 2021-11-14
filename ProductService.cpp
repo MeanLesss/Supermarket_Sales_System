@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<conio.h>
+#include"string.h"
 #include"Menu.cpp"
 #include"CartProduct.cpp"
 #include"Product.cpp"
@@ -27,7 +28,6 @@ private:
 	int No;// to set product No to the product in vector
 
 
-	string ProductName;
 	float Price;
 	float Discount;
 
@@ -71,13 +71,16 @@ public:
 				{
 					system("cls");
 					cout << "Product ADDED!!" << endl;
-					ProductName = product.getProductName();
 					Price = product.getPrice();
 					Discount = product.getDis();
-					cartProduct = CartProduct(ProductName, id, Price, quantity, Discount);
+					//maybe update stock in here
+					cartProduct = CartProduct(product.getName(), id, Price, quantity, Discount);
 					storingProduct.push_back(cartProduct);
 					PrintAddedProduct(storingProduct);
 					count++;
+					fin.close();
+					quantity = product.getQuantity() - quantity;
+					UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product
 					break;
 				}
 				No++;
@@ -106,7 +109,6 @@ public:
 			{
 				system("cls");
 				invoice.PrintInvoice(storingProduct);
-				invoice.UpdateStock(storingProduct);
 				storingProduct.clear();
 				option = '4';
 				system("pause");
@@ -148,5 +150,57 @@ public:
 		storingProduct.erase(storingProduct.begin()+id);
 	}*/
 
-	
+	void UpdateStock(char productname[],int id,float Price,int quantity,float Discount)
+	{
+		Product product;
+		ifstream fin;
+		ofstream fout;
+
+		fin.open(PRODUCT_FILE, ios::in | ios::binary);
+		if (!fin)
+		{
+			cerr << "File open failed";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (fin.read(reinterpret_cast<char*>(&product), sizeof(Product)))
+		{
+			if (fin.eof()) { break; }
+			if (product.getProductName() != productname)
+			{
+				fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+			}
+			else
+			{
+				product = Product(productname, id, Price, quantity, Discount);
+				fout.write(reinterpret_cast<char*>(&product), sizeof(Product));
+			}
+		}
+		fin.close();
+		fout.close();
+		int removeStatus = 0;
+		//removeStatus = remove(PRODUCT_FILE);
+		if (remove("product.dat") == 0)
+		{
+			//cout << "Failed to remove!" << endl;
+			cout << "success remove" << endl;
+		}
+		else
+		{
+			cout << "fail to remove" << endl;
+		}
+		//remove(USER_FILE);
+		int renameStatus;
+		renameStatus = rename("temp.dat", "product.dat");
+		if (renameStatus == 0)
+		{
+			cout << "Item renamed!" << endl;
+		}
+		else
+		{
+			cout << "Failed to rename" << endl;
+		}
+
+	}
 };
