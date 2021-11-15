@@ -143,7 +143,6 @@
     <ClCompile Include="AccountUser.cpp" />
     <ClCompile Include="CartProduct.cpp" />
     <ClCompile Include="Cashier.cpp" />
-    <ClCompile Include="CashierCounter.cpp" />
     <ClCompile Include="CashierService.cpp" />
     <ClCompile Include="FileUtility.cpp" />
     <ClCompile Include="InvoiceBilling.cpp" />

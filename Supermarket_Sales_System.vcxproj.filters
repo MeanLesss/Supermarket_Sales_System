@@ -30,9 +30,6 @@
     <ClCompile Include="Service.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CashierCounter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AccountUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

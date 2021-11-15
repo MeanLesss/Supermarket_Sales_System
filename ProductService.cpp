@@ -22,11 +22,12 @@ private:
 
 
 	unsigned int size;
-	int count = 0;//use as a error method????!!
+	int count = 0;//use as a error detector in after search
 	int countDelete = 0;
 	char option;
 	int id;
 	int quantity;
+	int tempQuantity;
 	int No;// to set product No to the product in vector
 
 
@@ -81,7 +82,8 @@ public:
 					PrintAddedProduct(storingProduct);
 					count++;
 					fin.close();
-					quantity = product.getQuantity() - quantity;
+					tempQuantity = product.getQuantity();
+					quantity = tempQuantity - quantity;
 					UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product
 					break;
 				}
@@ -91,7 +93,7 @@ public:
 			{
 				cout << "Sorry Product NOT FOUND!!" << endl;
 			}
-			fin.close();
+			fin.close();   
 			cout << "1.Add more item" << endl
 				<< "2.Procced payout" << endl
 				<< "3.Remove item" << endl
@@ -133,10 +135,17 @@ public:
 				system("pause");
 				system("cls");
 				break;
+
+			case '4':
+				quantity = tempQuantity;
+				UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product
+				storingProduct.clear();
+
+				break;
 			case '0':
 				exit(1);
 			}
-			//if no print invoice;
+			//if no print invoice;	
 		} while (option != '4');
 	}
 	void PrintAddedProduct(vector<CartProduct> storingProduct)
