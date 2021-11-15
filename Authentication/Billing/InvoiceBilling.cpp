@@ -1,7 +1,6 @@
 #pragma once
 #include"CartProduct.cpp"
-#include"Product.cpp"
-#include"Report.cpp"
+#include "../../Report/Report.cpp"
 using namespace std;
 
 class InvoiceBilling

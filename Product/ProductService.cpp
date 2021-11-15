@@ -3,11 +3,10 @@
 #include<vector>
 #include<conio.h>
 #include"string.h"
-#include"Menu.cpp"
-#include"CartProduct.cpp"
 #include"Product.cpp"
-#include"Service.cpp"
-#include"InvoiceBilling.cpp"
+#include "../Service/Services/Service.cpp"
+#include "../Main/Menu.cpp"
+#include "../Authentication/Billing/InvoiceBilling.cpp"
 using namespace std;
 
 class ProductService

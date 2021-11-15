@@ -1,8 +1,7 @@
 #pragma once
 #include<iostream>
-#include"ManagerService.cpp"
-#include"CashierService.cpp"
-#include"AccountUser.cpp"
+#include "../../Manager/ManagerService.cpp"
+#include "../../Cashier/CashierService.cpp"
 
 class LogInAuthentication 
 {

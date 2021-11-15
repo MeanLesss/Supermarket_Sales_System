@@ -1,8 +1,9 @@
 #pragma once
 #include"Cashier.cpp"
-#include"ProductService.cpp"
-#include"Menu.cpp"
-#include"Report.cpp"
+#include "../Main/Menu.cpp"
+#include "../Product/Product.cpp"
+#include "../Report/Report.cpp"
+#include "../Product/ProductService.cpp"
 
 class CashierService:public ProductService
 {

@@ -140,45 +140,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AccountUser.cpp" />
     <ClCompile Include="Account\AccountUser.cpp" />
     <ClCompile Include="Authentication\Billing\CartProduct.cpp" />
     <ClCompile Include="Authentication\Billing\InvoiceBilling.cpp" />
     <ClCompile Include="Authentication\LogIn\LogInAuthentication.cpp" />
-    <ClCompile Include="CartProduct.cpp" />
-    <ClCompile Include="Cashier.cpp" />
-    <ClCompile Include="CashierService.cpp" />
     <ClCompile Include="Cashier\Cashier.cpp" />
     <ClCompile Include="Cashier\CashierService.cpp" />
-    <ClCompile Include="FileUtility.cpp" />
-    <ClCompile Include="InvoiceBilling.cpp" />
-    <ClCompile Include="LogInAuthentication.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Main\main.cpp" />
     <ClCompile Include="Main\Menu.cpp" />
-    <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="ManagerService.cpp" />
     <ClCompile Include="Manager\Manager.cpp" />
     <ClCompile Include="Manager\ManagerService.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Product.cpp" />
-    <ClCompile Include="ProductService.cpp" />
     <ClCompile Include="Product\Product.cpp" />
     <ClCompile Include="Product\ProductService.cpp" />
-    <ClCompile Include="Report.cpp" />
     <ClCompile Include="Report\Report.cpp" />
-    <ClCompile Include="Service.cpp" />
-    <ClCompile Include="ServiceApp.cpp" />
     <ClCompile Include="Service\FileUtility.cpp" />
     <ClCompile Include="Service\Services\Service.cpp" />
     <ClCompile Include="Service\Services\ServiceApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="diagram\ClassDiagram.cd" />
-    <None Include="product.dat" />
     <None Include="README.md" />
-    <None Include="report.dat" />
-    <None Include="user.dat" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />

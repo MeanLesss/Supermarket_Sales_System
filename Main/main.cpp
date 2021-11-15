@@ -1,7 +1,8 @@
 #include<iostream>
-#include"Service.cpp"
-#include"ServiceApp.cpp"
+#include"../Service/Services/Service.cpp"
+#include"../Service/Services/ServiceApp.cpp"
 #include"Menu.cpp"
+#include "../Product/Product.cpp"
 
 using namespace std;
 int main()

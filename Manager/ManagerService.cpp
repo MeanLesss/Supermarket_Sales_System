@@ -1,10 +1,9 @@
 #pragma once
-#include"Service.cpp"
-#include"Manager.cpp"
-#include"Product.cpp"
-#include"Cashier.cpp"
-#include"Menu.cpp"
-#include"AccountUser.cpp"
+
+#include "../Account/AccountUser.cpp"
+#include "../Service/Services/Service.cpp"
+#include "../Service/Services/Service.cpp"
+#include "../Main/Menu.cpp"
 
 class ManagerService
 {

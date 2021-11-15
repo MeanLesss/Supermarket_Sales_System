@@ -1,8 +1,6 @@
 #pragma once
 #include"Service.cpp"
-#include"Menu.cpp"
-#include"AccountUser.cpp"
-#include"LogInAuthentication.cpp"
+#include "../../Authentication/LogIn/LogInAuthentication.cpp"
 
 class ServiceApp
 {

@@ -2,11 +2,11 @@
 #include <iostream>
 #include <fstream>
 #include<vector>
-#include"AccountUser.cpp"
-#include"CartProduct.cpp"
-#include"Cashier.cpp"
-#include"Manager.cpp"
-#include"Product.cpp"
+#include "../Account/AccountUser.cpp"
+#include "../Manager/Manager.cpp"
+#include "../Cashier/Cashier.cpp"
+#include "../Product/Product.cpp"
+#include "../Authentication/Billing/CartProduct.cpp"
 using namespace std;
 
 class FileIO
