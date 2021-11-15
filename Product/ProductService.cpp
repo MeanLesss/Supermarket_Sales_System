@@ -19,7 +19,6 @@ private:
 	Product product;
 	InvoiceBilling invoice;
 
-
 	unsigned int size;
 	int count = 0;//use as a error detector in after search
 	int countDelete = 0;
