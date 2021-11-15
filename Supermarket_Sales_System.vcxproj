@@ -145,7 +145,6 @@
     <ClCompile Include="Cashier.cpp" />
     <ClCompile Include="CashierCounter.cpp" />
     <ClCompile Include="CashierService.cpp" />
-    <ClCompile Include="ExceptionHandling.cpp" />
     <ClCompile Include="FileUtility.cpp" />
     <ClCompile Include="InvoiceBilling.cpp" />
     <ClCompile Include="LogInAuthentication.cpp" />
@@ -162,6 +161,7 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="product.dat" />
+    <None Include="README.md" />
     <None Include="report.dat" />
     <None Include="user.dat" />
   </ItemGroup>

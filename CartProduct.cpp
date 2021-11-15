@@ -17,7 +17,7 @@ private:
 
 
 public:
-	CartProduct() {}
+	CartProduct() {}//Use to store product when cashier add product to cart.
 	
 	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount)
 	{

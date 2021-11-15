@@ -21,7 +21,6 @@ private:
 public:
 	ServiceApp() {}
 
-
 	void MenuProcess()
 	{
 		do

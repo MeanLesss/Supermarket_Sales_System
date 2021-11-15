@@ -51,9 +51,6 @@
     <ClCompile Include="LogInAuthentication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExceptionHandling.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ProductService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,6 +72,7 @@
     <None Include="user.dat" />
     <None Include="product.dat" />
     <None Include="report.dat" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />

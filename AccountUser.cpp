@@ -12,7 +12,10 @@ private:
 	char role[8];
 public:
 
-	AccountUser():UserName("unknown"),PassWord("unknown") { }
+	AccountUser():UserName("unknown"),PassWord("unknown") 
+	{
+	
+	}
 	AccountUser(char name[],char password[],char role[]) 
 	{
 		memcpy(this->UserName, name, 20);
