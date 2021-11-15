@@ -159,7 +159,7 @@
     <ClCompile Include="ServiceApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="diagram\ClassDiagram.cd" />
     <None Include="product.dat" />
     <None Include="README.md" />
     <None Include="report.dat" />

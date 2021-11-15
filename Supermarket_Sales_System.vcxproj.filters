@@ -68,11 +68,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="user.dat" />
     <None Include="product.dat" />
     <None Include="report.dat" />
     <None Include="README.md" />
+    <None Include="diagram\ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />
