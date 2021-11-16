@@ -2,6 +2,7 @@
 #include<iostream>
 #include "../Report/Report.cpp"
 #include "../Product/ProductService.cpp"
+#include "../Report/ReportService.cpp"
 using namespace std;
 
 class CashierService:public ProductService
@@ -9,6 +10,7 @@ class CashierService:public ProductService
 private:
 	Menu menu;
 	Report report;
+	ReportService reportService;
 
 	char option;
 
@@ -32,7 +34,7 @@ public:
 			break;
 		case '2':
 			system("cls");
-			report.LoadSaleReport();
+			reportService.LoadSaleReport();
 			system("pause");
 			goto START;
 			break;

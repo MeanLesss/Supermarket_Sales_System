@@ -6,7 +6,9 @@
 #include "../Manager/Manager.cpp"
 #include "../Cashier/Cashier.cpp"
 #include "../Product/Product.cpp"
-#include "../Authentication/Billing/CartProduct.cpp"
+#include "../Product/CartProduct/CartProduct.cpp"
+#include "../SYSTEM/GetTimeAndDate.cpp"
+#include "../Report/Report.cpp"
 using namespace std;
 
 class FileIO
@@ -15,7 +17,10 @@ private:
     ofstream fout;
     ifstream fin;
 
+
     int count = 0;
+   // char dateTime[50];
+
 public:
     void OpenDataToFile(string filename)//OpenDataToFile(string filename)
     {
@@ -222,24 +227,30 @@ public:
         }
     }
 
-    void WriteDataToFileReport(vector<CartProduct> storingProduct)
+    
+    void WriteDataToFileReport(vector<CartProduct> storingProduct,GetTimeAndDate dateAndTime)
     {
         unsigned int size = storingProduct.size();
+
+        //fout.write(reinterpret_cast<char*>(&dateAndTime), sizeof(GetTimeAndDate));
         for (unsigned int i = 0; i < size; i++)
         {
             fout.write(reinterpret_cast<char*>(&storingProduct[i]), sizeof(CartProduct));
         }
+        storingProduct.clear();
 
     }
-    void ReadDataFromReport(CartProduct cartProduct)
+    void ReadDataFromReport()
     {
+        vector<CartProduct> storingProduct;
+        CartProduct cartProduct;
         while (fin.read(reinterpret_cast<char*>(&cartProduct), sizeof(CartProduct)))
         {
             if(fin.eof()) { break;}
             cartProduct.DisplayProductInCart();
-            
         }
     }
+    
 
 
     void CloseDataToFile()

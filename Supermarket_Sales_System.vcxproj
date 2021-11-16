@@ -141,7 +141,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account\AccountUser.cpp" />
-    <ClCompile Include="Authentication\Billing\CartProduct.cpp" />
+    <ClCompile Include="Report\ReportService.cpp" />
+    <ClCompile Include="SYSTEM\GetTimeAndDate.cpp" />
+    <ClCompile Include="Product\CartProduct\CartProduct.cpp" />
     <ClCompile Include="Authentication\Billing\InvoiceBilling.cpp" />
     <ClCompile Include="Authentication\LogIn\LogInAuthentication.cpp" />
     <ClCompile Include="Authentication\LogIn\LogInService.cpp" />

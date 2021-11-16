@@ -1,34 +1,40 @@
 #pragma once
 #include<iostream>
 #include<vector>
-#include "../Service/FileUtility.cpp"
+#include "../Product/CartProduct/CartProduct.cpp"
+#include "../SYSTEM/GetTimeAndDate.cpp"
+
 using namespace std;
-const char REPORT_FILE[] = "report.dat";
 
 
-class Report
+class Report:CartProduct
 {
 private:
-	FileIO fileIO;
 	CartProduct cartProduct;
+	GetTimeAndDate dateAndTime;
+
+	char dateTime[50];
+	char ProductName[20];
+	int ProductNo;
+	float Price;
+	int quantity;
+	float Discount;
+
+	float total;
 
 public:
-	Report() {}
-	~Report(){}
-	void SaveSaleReport(vector<CartProduct> storingProduct)
+	Report():ProductName("unknown"), ProductNo(0), Price(0), quantity(0), Discount(0), total(0) {}
+	Report(char ProductName[],int ProductNo,float Price,int quantity,float Discount)
+		:CartProduct(ProductName,ProductNo,Price,quantity,Discount)
 	{
-		fileIO.OpenDataToFile(REPORT_FILE);
-		fileIO.WriteDataToFileReport(storingProduct);
-		fileIO.CloseDataToFile();
-
-	}
-
-	void LoadSaleReport()
-	{
-		fileIO.OpenDataFromFile(REPORT_FILE);
 		
-		fileIO.ReadDataFromReport(cartProduct);
+	}
+	~Report(){}
 
-		fileIO.CloseDataFromFile();
+	
+
+	void DisplayReport()
+	{
+		cout << "+ " << ProductNo << ".\t||  " << ProductName << "\t\t$" << Price << "\t\t " << quantity << "pcs\t\t " << Discount << "%\t\t" << "total : $" << total << endl;
 	}
 };

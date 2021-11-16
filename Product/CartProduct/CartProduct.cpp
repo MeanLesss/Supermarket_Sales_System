@@ -2,17 +2,20 @@
 #include<iostream>
 #include<string.h>
 #include<conio.h>
+#include "../../SYSTEM/GetTimeAndDate.cpp"
 
 using namespace std;
 class CartProduct
 {
 private:
+	GetTimeAndDate dateAndTime;
+
+	char dateTime[30];
 	char ProductName[20];
 	int ProductNo;
 	float Price;
 	int quantity;
 	float Discount;
-
 	float total;
 
 
@@ -22,12 +25,22 @@ public:
 	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount)
 	{
 		memcpy(this->ProductName, ProductName, 20);
-		//this->ProductName = ProductName;
+		memcpy(this->dateTime, "unknown", 30);
 		this->ProductNo = ProductNo;
 		this->Price = Price;
 		this->quantity = quantity;
 		this->Discount = Discount;
 		this->total = 0;
+	}
+	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount,float total)
+	{
+		memcpy(this->ProductName, ProductName, 20);
+		memcpy(this->dateTime, "unknown", 50);
+		this->ProductNo = ProductNo;
+		this->Price = Price;
+		this->quantity = quantity;
+		this->Discount = Discount;
+		this->total = total;
 	}
 	~CartProduct() {}
 
@@ -51,6 +64,10 @@ public:
 	{
 		return total;
 	}
+	void setDateTime(char dateTime[])
+	{
+		memcpy(this->dateTime, dateTime, 30);
+	}
 	void DisplayProductInCart()
 	{
 		float sellingPrice;
@@ -66,11 +83,15 @@ public:
 			total = Price * quantity;
 		}
 		
-		cout << "===========================================================================================================" << endl;
-		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << quantity << "pcs\t\t|| " << Discount << "%\t\t||" << "total : $" << total << endl;
-		cout << "===========================================================================================================" << endl;
+
+		cout << "+ " << ProductNo << ".\t||  " << ProductName << "\t\t\t$" << Price << "\t\t " << quantity << "pcs\t\t " << Discount << "%\t\t" << "total : $" << total << endl;
+		
 	}
 
+	void DisplayDateFromReport()
+	{
+		cout << "Report Date and Time : " << dateTime << endl;
+	}
 
 
 };

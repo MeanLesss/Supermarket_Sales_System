@@ -18,7 +18,7 @@
     <ClCompile Include="Account\AccountUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Authentication\Billing\CartProduct.cpp">
+    <ClCompile Include="Product\CartProduct\CartProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Authentication\Billing\InvoiceBilling.cpp">
@@ -64,6 +64,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Authentication\LogIn\LogInService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SYSTEM\GetTimeAndDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Report\ReportService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

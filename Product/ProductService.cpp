@@ -15,10 +15,15 @@ private:
 	Service service;
 	Menu menu;
 	CartProduct cartProduct;
-	vector<CartProduct> storingProduct;
+	Report cartReport;
 	Product product;
 	InvoiceBilling invoice;
+	GetTimeAndDate dateAndTime;
+	
+	vector<CartProduct> storingProduct;
+	vector<Report> storingForReport;
 
+	char productName[20];
 	unsigned int size;
 	int count = 0;//use as a error detector in after search
 	int countDelete = 0;
@@ -29,6 +34,7 @@ private:
 	int No;// to set product No to the product in vector
 	float Price;
 	float Discount;
+	char dateTime[30];
 
 	
 
@@ -70,14 +76,22 @@ public:
 				{
 					system("cls");
 					cout << "Product ADDED!!" << endl;
+					memcpy(this->dateTime,dateAndTime.GetDate(),30);
+					cout << dateTime << endl;
 					Price = product.getPrice();
 					Discount = product.getDis();
-					//maybe update stock in here
-					cartProduct = CartProduct(product.getName(), id, Price, quantity, Discount);
-					storingProduct.push_back(cartProduct);
+					memcpy(this->productName, product.getName(), 20);
+					cartProduct.setDateTime(dateTime);
+					cartProduct = CartProduct(productName, id, Price, quantity, Discount);
+					
+					storingProduct.push_back(cartProduct);//push carted product to vector
+		
+					//storingForReport.push_back(cartReport);
+
 					PrintAddedProduct(storingProduct);
 					count++;
 					fin.close();
+
 					tempQuantity = product.getQuantity();
 					quantity = tempQuantity - quantity;
 					UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product

@@ -1,24 +1,32 @@
 #pragma once
-#include"CartProduct.cpp"
 #include "../../Report/Report.cpp"
+#include "../../Product/CartProduct/CartProduct.cpp"
+#include "../../SYSTEM/GetTimeAndDate.cpp"
+#include "../../Report/ReportService.cpp"
 using namespace std;
 
 class InvoiceBilling
 {
 private:
 	CartProduct cartProduct;
-	Report report;
+	ReportService reportService;
+	GetTimeAndDate dateAndTime;
 
 
 	float subtotal;
+	char dateTime[50];
+
 public:
-	InvoiceBilling():subtotal(0) {}
+	InvoiceBilling():subtotal(0),dateTime("unknown") {}
 	~InvoiceBilling() {}
 
 	void PrintInvoice(vector<CartProduct> storingProduct) 
 	{
 		unsigned int size = storingProduct.size();
 
+		memcpy(this->dateTime, dateAndTime.GetDate(), 50);
+
+		cout << "Date & Time : " << dateTime << endl;
 		cout << "===========================================================================================================" << endl;
 		cout << "......................................................INVOICE.............................................." << endl;
 		cout << "===========================================================================================================" << endl;
@@ -32,8 +40,8 @@ public:
 		cout << "===========================================================================================================" << endl;
 		cout << "                                               --See you again soon--" << endl;
 
-		report.SaveSaleReport(storingProduct);
-
+		reportService.SaveSaleReport(storingProduct);
+		storingProduct.clear();
 
 	}
 	

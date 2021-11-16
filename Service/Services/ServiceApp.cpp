@@ -1,6 +1,8 @@
 #pragma once
+
 #include"Service.cpp"
 #include "../../Authentication/LogIn/LogInService.cpp"
+#include "../../SYSTEM/GetTimeAndDate.cpp"
 
 class ServiceApp
 {
@@ -11,10 +13,12 @@ private:
 	Menu menu;
 	Service service;
 	AccountUser account;
-	
+	GetTimeAndDate dateAndTime;
+
 	string name;
 	char Username[20];
 	char Password[20];
+	char dateTime[50];
 	char loginmenu;
 	bool loggedIn;
 
@@ -26,6 +30,7 @@ public:
 
 	void MenuProcess()
 	{
+		memcpy(this->dateTime, dateAndTime.GetDate(), 50);
 		do
 		{
 			system("cls");
@@ -41,6 +46,7 @@ public:
 				cout << "\t\t\t\tEnter username : "; cin >> Username;
 				cout << "\t\t\t\tEnter password : "; cin >> Password;
 				system("cls");
+				cout << "\t\t\t\tDate & Time :" << dateTime;
 				loggedIn = authentication.authenticateUser(Username, Password);
 				logIn.UserType(loggedIn);
 
