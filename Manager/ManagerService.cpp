@@ -2,23 +2,24 @@
 
 #include "../Account/AccountUser.cpp"
 #include "../Service/Services/Service.cpp"
-#include "../Service/Services/Service.cpp"
 #include "../Main/Menu.cpp"
 
 class ManagerService
 {
 private:
-	
+
 	AccountUser account;
-	Manager manager;
 	Service service;
 	Menu menu;
 	Product product;
-	Cashier cashier;
 
 	string name;
 	char option;
 public:
+
+	ManagerService() :name("unknown"), option(' ') {}
+	~ManagerService() {}
+
 	void LogInAsManager()
 	{
 		do
@@ -120,4 +121,5 @@ public:
 			}
 		} while (option != '9');
 	}
+
 };

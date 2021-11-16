@@ -1,68 +1,53 @@
 #pragma once
 #include<iostream>
-#include "../../Manager/ManagerService.cpp"
-#include "../../Cashier/CashierService.cpp"
+#include<fstream>
+#include "../../Account/AccountUser.cpp"
 
 class LogInAuthentication 
 {
 private:
-	ManagerService ManService;
-	CashierService CashService;
     AccountUser account;
-    Cashier cashier;
-    Manager manager;
 
-    int count;
+    bool count,loggedIn;
+
 public:
-	LogInAuthentication():count(0) {}
-	//log ins
+	LogInAuthentication():count(0),loggedIn(0) {}
+    ~LogInAuthentication() {}
+	//log in
 
-
-    void authenticateUser(char username[], char password[])
+    bool authenticateUser(char username[], char password[])
     {
         ifstream fin;
-        fin.open(USER_FILE, ios::in | ios::binary);
-        count = 0;
+        fin.open("user.dat", ios::in | ios::binary);
+        count = false;
         while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
         {
-            if (account.getName() == username && account.getPassword() == password) 
+            if (account.getName() == username && account.getPassword() == password)
             {
                 if (account.getRole() == "manager")
-                {   
-                    char role[20] = "manager";
-                    manager = Manager(username, password,role);
-                    cout << "\t\t\t\tLogged in as :" << endl;
-                    manager.DisplayManager();
-                    fin.close();
-                    ManService.LogInAsManager();
-                    count++;
+                {
+                    loggedIn = true;
+                    count = true;
                     break;
                 }
                 if (account.getRole() == "cashier")
                 {
-                    char role[20] = "cashier";
-                    Cashier cashier(username, password, role);
-                    cout << "\t\t\t\tLogged in as :" << endl;
-                    cashier.DisplayCashier();
-                    fin.close();
-                    CashService.LogInAsCashier();
-                    count++;
+                    loggedIn = false;
+                    count = true;
                     break;
                 }
             }
 
         }
         fin.close();
-        if (count == 0) 
+        if (count == false)
         {
             cout << "\t\t\t\t=======================================" << endl;
             cout << "\t\t\t\t||  Incorrect password or username!  ||" << endl;
             cout << "\t\t\t\t=======================================" << endl;
             system("pause");
         }
+        return loggedIn;
     }
-
-    
-
 
 };

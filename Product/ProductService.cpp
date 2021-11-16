@@ -27,15 +27,13 @@ private:
 	int quantity;
 	int tempQuantity;
 	int No;// to set product No to the product in vector
-
-
 	float Price;
 	float Discount;
 
 	
 
 public:
-	ProductService() {}
+	ProductService():size(0),count(0),countDelete(0),option(0),id(0),quantity(0),tempQuantity(0),No(0),Price(0),Discount(0) {}
 	~ProductService() {}
 
 //Not enough time to refactor this part

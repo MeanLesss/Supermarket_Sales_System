@@ -23,6 +23,14 @@ public:
 		memcpy(this->role, role, 8);
 	}
 
+	char* getUserName()
+	{
+		return UserName;
+	}
+	char* getPassWord()
+	{
+		return PassWord;
+	}
 	string getName()
 	{
 		return UserName;

@@ -1,15 +1,13 @@
 #pragma once
-#include"Cashier.cpp"
-#include "../Main/Menu.cpp"
-#include "../Product/Product.cpp"
+#include<iostream>
 #include "../Report/Report.cpp"
 #include "../Product/ProductService.cpp"
+using namespace std;
 
 class CashierService:public ProductService
 {
 private:
 	Menu menu;
-	Product product;
 	Report report;
 
 	char option;

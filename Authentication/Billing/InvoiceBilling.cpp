@@ -12,7 +12,7 @@ private:
 
 	float subtotal;
 public:
-	InvoiceBilling() {}
+	InvoiceBilling():subtotal(0) {}
 	~InvoiceBilling() {}
 
 	void PrintInvoice(vector<CartProduct> storingProduct) 

@@ -1,11 +1,12 @@
 #pragma once
 #include"Service.cpp"
-#include "../../Authentication/LogIn/LogInAuthentication.cpp"
+#include "../../Authentication/LogIn/LogInService.cpp"
 
 class ServiceApp
 {
 private:
-	LogInAuthentication Login;
+	LogInAuthentication authentication;
+	LogInService logIn;
 	Manager manager;
 	Menu menu;
 	Service service;
@@ -15,9 +16,13 @@ private:
 	char Username[20];
 	char Password[20];
 	char loginmenu;
+	bool loggedIn;
 
 public:
-	ServiceApp() {}
+
+	ServiceApp():name("unknown"),Username("unknown"),Password("unknown"),loginmenu(' '){}
+	~ServiceApp() {}
+
 
 	void MenuProcess()
 	{
@@ -36,7 +41,9 @@ public:
 				cout << "\t\t\t\tEnter username : "; cin >> Username;
 				cout << "\t\t\t\tEnter password : "; cin >> Password;
 				system("cls");
-				Login.authenticateUser(Username, Password);
+				loggedIn = authentication.authenticateUser(Username, Password);
+				logIn.UserType(loggedIn);
+
 				break;
 			case '2':
 				system("cls");
@@ -72,5 +79,4 @@ public:
 		} while (loginmenu != '5');
 	}
 
-	
 };

@@ -17,8 +17,8 @@ private:
 
 
 public:
-	CartProduct() {}//Use to store product when cashier add product to cart.
-	
+	//Use to store product when cashier add product to cart.
+	CartProduct():ProductName("unknown"),ProductNo(0),Price(0),quantity(0),Discount(0),total(0) {}
 	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount)
 	{
 		memcpy(this->ProductName, ProductName, 20);
@@ -27,6 +27,7 @@ public:
 		this->Price = Price;
 		this->quantity = quantity;
 		this->Discount = Discount;
+		this->total = 0;
 	}
 	~CartProduct() {}
 

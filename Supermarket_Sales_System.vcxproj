@@ -144,6 +144,7 @@
     <ClCompile Include="Authentication\Billing\CartProduct.cpp" />
     <ClCompile Include="Authentication\Billing\InvoiceBilling.cpp" />
     <ClCompile Include="Authentication\LogIn\LogInAuthentication.cpp" />
+    <ClCompile Include="Authentication\LogIn\LogInService.cpp" />
     <ClCompile Include="Cashier\Cashier.cpp" />
     <ClCompile Include="Cashier\CashierService.cpp" />
     <ClCompile Include="Main\main.cpp" />

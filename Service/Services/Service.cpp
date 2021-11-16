@@ -5,9 +5,6 @@
 #include<fstream>
 #include<vector>
 #include<stdio.h>
-#include "../../Manager/Manager.cpp"
-#include "../../Cashier/Cashier.cpp"
-#include "../../Product/Product.cpp"
 #include "../FileUtility.cpp"
 using namespace std;
 const char USER_FILE[] = "user.dat";
