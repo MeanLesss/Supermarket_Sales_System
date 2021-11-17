@@ -38,19 +38,42 @@ public:
 		cout << "\t\t\t\t*****************************************************" << endl
 			 << "\t\t\t\t*                    Manager Menu                   *" << endl
 			 << "\t\t\t\t*---------------------------------------------------*" << endl
-			 << "\t\t\t\t*              1.Create product                     *" << endl
-			 << "\t\t\t\t*              2.View all product                   *" << endl
-			 << "\t\t\t\t*              3.Update product                     *" << endl
-			 << "\t\t\t\t*              4.Remove Prodcut                     *" << endl
-			 << "\t\t\t\t*              5.Add cashier account                *" << endl
-			 << "\t\t\t\t*              6.Update cashier account             *" << endl
-			 << "\t\t\t\t*              7.Delete cashier account             *" << endl
-			 << "\t\t\t\t*              8.View all cashier account and pass  *" << endl
-			 << "\t\t\t\t*              9.Sign out                           *" << endl
+			 << "\t\t\t\t*              1.Product management                 *" << endl
+			 << "\t\t\t\t*              2.Cashier management                 *" << endl
+			 << "\t\t\t\t*              3.Sign out                           *" << endl
 			 << "\t\t\t\t*              0.Exit                               *" << endl
 			 << "\t\t\t\t*****************************************************" << endl
 			 << "\t\t\t\tEnter your choice : ";
 		
+	}
+
+	void DisplayManagerProductCRUD()
+	{
+		cout << "\t\t\t\t*****************************************************" << endl
+			<< "\t\t\t\t*                    Product CRUD                   *" << endl
+			<< "\t\t\t\t*---------------------------------------------------*" << endl
+			<< "\t\t\t\t*              1.Create product                     *" << endl
+			<< "\t\t\t\t*              2.View all product                   *" << endl
+			<< "\t\t\t\t*              3.Update product                     *" << endl
+			<< "\t\t\t\t*              4.Remove Prodcut                     *" << endl
+			<< "\t\t\t\t*              5.Back to manager menu               *" << endl
+			<< "\t\t\t\t*              0.Exit                               *" << endl
+			<< "\t\t\t\t*****************************************************" << endl
+			<< "\t\t\t\tEnter your choice : ";
+	}
+	void DisplayManagerAccountCRUD()
+	{
+		cout << "\t\t\t\t*****************************************************" << endl
+			<< "\t\t\t\t*                    Manager CRUD                   *" << endl
+			<< "\t\t\t\t*---------------------------------------------------*" << endl
+			<< "\t\t\t\t*              1.Add cashier account                *" << endl
+			<< "\t\t\t\t*              2.Update cashier account             *" << endl
+			<< "\t\t\t\t*              3.Delete cashier account             *" << endl
+			<< "\t\t\t\t*              4.View all cashier account and pass  *" << endl
+			<< "\t\t\t\t*              5.Back to manager menu               *" << endl
+			<< "\t\t\t\t*              0.Exit                               *" << endl
+			<< "\t\t\t\t*****************************************************" << endl
+			<< "\t\t\t\tEnter your choice : ";
 	}
 
 	void DisplayCashierMenu()

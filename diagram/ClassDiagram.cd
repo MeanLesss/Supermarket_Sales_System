@@ -1,115 +1,129 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Cashier">
-    <Position X="10.25" Y="4.75" Width="2" />
+    <Position X="13" Y="6.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAiAAAIEAApAgAAAAAAABAAAAAgAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Cashier.cpp</FileName>
+      <FileName>Cashier\Cashier.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Manager">
-    <Position X="5" Y="4.75" Width="2" />
+    <Position X="15.25" Y="7.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAQZAQAAAABAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Manager.cpp</FileName>
+      <FileName>Manager\Manager.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Menu">
-    <Position X="10" Y="0.75" Width="1.5" />
+    <Position X="7" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgQgAAAAAAAAAAAIAAAAAABAAAAAAAA=</HashCode>
-      <FileName>Menu.cpp</FileName>
+      <HashCode>AACAAAAAAAAAAgQgAAAAAAAAACAIAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Main\Menu.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Product">
-    <Position X="7.25" Y="0.75" Width="2.25" />
+    <Position X="25.25" Y="9" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ICACAAIAAQAAAAAAEAAAIBAAAIAAACAAAgiEgAAIAAA=</HashCode>
-      <FileName>Product.cpp</FileName>
+      <FileName>Product\Product.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service">
-    <Position X="7.25" Y="6.25" Width="2.25" />
+    <Position X="23.25" Y="1.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAgQACAAECAAACAiEAQAAQAAAQwAAAAAAAAA=</HashCode>
-      <FileName>Service.cpp</FileName>
+      <FileName>Service\Services\Service.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AccountUser">
-    <Position X="11.75" Y="0.75" Width="1.5" />
+    <Position X="14.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgEAAQABAAAABAAIABAAAAAAAAAAAQAEAAAAAAA=</HashCode>
-      <FileName>AccountUser.cpp</FileName>
+      <HashCode>AAAAAgEAAQABAAAABAAIABEAAAAAAAAAAQAMAAAAAAA=</HashCode>
+      <FileName>Account\AccountUser.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CashierService">
-    <Position X="5" Y="0.75" Width="1.5" />
+    <Position X="3" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEBEAAAAAgAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CashierService.cpp</FileName>
+      <HashCode>AEBEAABAAAAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cashier\CashierService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LogInAuthentication">
-    <Position X="14" Y="0.75" Width="1.5" />
+    <Position X="16.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAAAADAAIAAAEAAAAAAAIAAAAQAAAAAA=</HashCode>
-      <FileName>LogInAuthentication.cpp</FileName>
+      <HashCode>ABAAAIAAAAAAAAAABAAAAAAAAAAAAAAIAAAAQAQAAAA=</HashCode>
+      <FileName>Authentication\LogIn\LogInAuthentication.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ManagerService">
-    <Position X="13.5" Y="4.75" Width="1.5" />
+    <Position X="7" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAgAAAAAICAAAAAgEAAAEAAAAAEAAQAAAAAA=</HashCode>
-      <FileName>ManagerService.cpp</FileName>
+      <HashCode>QAAAAAAAAgIAAAAAAAAAAAAAAAAEIAAAAEgIQABAAAA=</HashCode>
+      <FileName>Manager\ManagerService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ServiceApp">
-    <Position X="15.5" Y="4.5" Width="1.5" />
+    <Position X="18.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAQAAgAgEAAAEAgACAEAQQAAAAAA=</HashCode>
-      <FileName>ServiceApp.cpp</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ExceptionHandling">
-    <Position X="16.5" Y="1" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ExceptionHandling.cpp</FileName>
+      <HashCode>ABARAAiAAAAAAAAAAQAAgAgEAAAEAgACAFAAQAAAAAA=</HashCode>
+      <FileName>Service\Services\ServiceApp.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProductService">
-    <Position X="1.25" Y="2.25" Width="2.5" />
+    <Position X="2.5" Y="2" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAABIAAAAwAAQAAKBIIARAgAACAAAACAAlAAgAAAAgA=</HashCode>
-      <FileName>ProductService.cpp</FileName>
+      <HashCode>AAABMACAAwAAQAAKBIIARAgABCAAAACAA1gAgAAACgA=</HashCode>
+      <FileName>Product\ProductService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CartProduct">
-    <Position X="17.5" Y="2.5" Width="2.5" />
+    <Position X="9.5" Y="2" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAARAAAACAAEAAAAAAAIAAACCAAkAEAAAIAAQ=</HashCode>
-      <FileName>CartProduct.cpp</FileName>
+      <HashCode>AAABAAKAQRAAAACAAEAAAAAABIAAACCAAkAEAAAIAAQ=</HashCode>
+      <FileName>Product\CartProduct\CartProduct.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FileIO">
-    <Position X="22.75" Y="1.5" Width="2.5" />
+    <Position X="26" Y="3.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAoAAAEAAcAAIECgBQACBAAADAACAAAAgAAAAAAAAAI=</HashCode>
-      <FileName>FileUtility.cpp</FileName>
+      <FileName>Service\FileUtility.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InvoiceBilling">
-    <Position X="20" Y="7" Width="2" />
+    <Position X="22.75" Y="9" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAEAAQAAAAAQAAAAAAAQAAAAAAAAAAAAAAAACAEAAA=</HashCode>
-      <FileName>InvoiceBilling.cpp</FileName>
+      <HashCode>AAAAAATAAAAAQAAAAAAAQAAABAAAAAAAAAAAACAEAAA=</HashCode>
+      <FileName>Authentication\Billing\InvoiceBilling.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Report">
-    <Position X="20.25" Y="1.5" Width="2.25" />
+    <Position X="9.75" Y="8.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAQAAAAAAAAABCAAAAAAAAAgAAAAAABAA=</HashCode>
-      <FileName>Report.cpp</FileName>
+      <HashCode>AAAAAACAAQAAQAAAAAAAAAACBIAAAACAAkAAAAgIBAA=</HashCode>
+      <FileName>Report\Report.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GetTimeAndDate">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAEIAAAAAAAAIQAAAAAAAAACAAAAAAAAABA=</HashCode>
+      <FileName>SYSTEM\GetTimeAndDate.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogInService">
+    <Position X="20.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAQAAAAAACAAIABAEIAAACAAAAAEAQAAAAAA=</HashCode>
+      <FileName>Authentication\LogIn\LogInService.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportService">
+    <Position X="20.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAACAAAAAQAAAAAAAAABAAABAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Report\ReportService.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
