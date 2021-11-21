@@ -14,3 +14,7 @@
 
 -write date and time to file [not yet]
 
+-fix product display [not yet]
+
+-add time and date to CartProuct [not yet]
+
