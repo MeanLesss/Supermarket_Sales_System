@@ -81,7 +81,6 @@ public:
 					Price = product.getPrice();
 					Discount = product.getDis();
 					memcpy(this->productName, product.getName(), 20);
-					cartProduct.setDateTime(dateTime);
 					cartProduct = CartProduct(productName, id, Price, quantity, Discount);
 					
 					storingProduct.push_back(cartProduct);//push carted product to vector
@@ -92,9 +91,9 @@ public:
 					count++;
 					fin.close();
 
-					tempQuantity = product.getQuantity();
+					/*tempQuantity = product.getQuantity();
 					quantity = tempQuantity - quantity;
-					UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product
+					UpdateStock(product.getName(), id, Price, quantity, Discount);*///Update the quantity of the product
 					break;
 				}
 				No++;

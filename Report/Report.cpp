@@ -24,11 +24,11 @@ private:
 
 public:
 	Report():ProductName("unknown"), ProductNo(0), Price(0), quantity(0), Discount(0), total(0) {}
-	Report(char ProductName[],int ProductNo,float Price,int quantity,float Discount)
-		:CartProduct(ProductName,ProductNo,Price,quantity,Discount)
+	Report(char ProductName[], int ProductNo, float Price, int quantity, float Discount) {}
+		/*:CartProduct(ProductName,ProductNo,Price,quantity,Discount)
 	{
 		
-	}
+	}*/
 	~Report(){}
 
 	

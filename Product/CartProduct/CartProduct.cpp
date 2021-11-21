@@ -25,7 +25,6 @@ public:
 	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount)
 	{
 		memcpy(this->ProductName, ProductName, 20);
-		memcpy(this->dateTime, "unknown", 30);
 		this->ProductNo = ProductNo;
 		this->Price = Price;
 		this->quantity = quantity;
@@ -75,7 +74,7 @@ public:
 		if (Discount != 0)
 		{
 			sellingPrice = Price * ((100 - Discount) / 100);
-			total = Price - sellingPrice;
+			total = sellingPrice;
 			total *= quantity;
 		}
 		else
