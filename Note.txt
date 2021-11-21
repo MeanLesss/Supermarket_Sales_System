@@ -9,3 +9,8 @@
 -add README to github	[done]
 
 -recheck overload memory from classes	 [not yet]
+
+-fix the date and time [not yet]
+
+-write date and time to file [not yet]
+

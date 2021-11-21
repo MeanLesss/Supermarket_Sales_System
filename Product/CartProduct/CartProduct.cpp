@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string.h>
 #include<conio.h>
+#include<iomanip>
 #include "../../SYSTEM/GetTimeAndDate.cpp"
 
 using namespace std;
@@ -84,7 +85,8 @@ public:
 		
 
 		cout << "+ " << ProductNo << ".\t||  " << ProductName << "\t\t\t$" << Price << "\t\t " << quantity << "pcs\t\t " << Discount << "%\t\t" << "total : $" << total << endl;
-		
+		//cout << "+ " << right << ProductNo << setw(4) << "||" << ProductName << setw(15) << "||$" << price << setw(20) << "||" << quantity << "pcs" << setw(15) << "||" << Discount << "%" << setw(25) << " ||total : $" << total << endl;
+
 	}
 
 	void DisplayDateFromReport()
