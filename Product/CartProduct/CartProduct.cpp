@@ -42,6 +42,10 @@ public:
 		this->Discount = Discount;
 		this->total = total;
 	}
+	cartProduct(char dateTime[],vector<CartProduct> storingProduct)
+	{
+
+	}
 	~CartProduct() {}
 
 	int getID()
@@ -63,6 +67,10 @@ public:
 	float getTotal()
 	{
 		return total;
+	}
+	char * getDateAndTime()
+	{
+		return dateTime;
 	}
 	void setDateTime(char dateTime[])
 	{

@@ -247,6 +247,9 @@ public:
         while (fin.read(reinterpret_cast<char*>(&cartProduct), sizeof(CartProduct)))
         {
             if(fin.eof()) { break;}
+
+            cartProduct.DisplayDateFromReport();
+            if(cartProduct.get == )
             cartProduct.DisplayProductInCart();
         }
     }

@@ -39,8 +39,17 @@ public:
 			}
 
 		}
+		/*
+
+		*/
 
 		fileIO.CloseDataFromFile();
 	}
+	/*
+	void LoadSaleReport(char datetime[],vector<CartProduct> storingproduct)
+	{
+		
+	}
+	*/
 
 };
