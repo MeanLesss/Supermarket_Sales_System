@@ -243,15 +243,26 @@ public:
     void ReadDataFromReport()
     {
         vector<CartProduct> storingProduct;
+        unsigned int size = storingProduct.size();
+        
         CartProduct cartProduct;
         while (fin.read(reinterpret_cast<char*>(&cartProduct), sizeof(CartProduct)))
         {
             if(fin.eof()) { break;}
-
-            cartProduct.DisplayDateFromReport();
-            if(cartProduct.get == )
-            cartProduct.DisplayProductInCart();
+            // cartProduct.DisplayDateFromReport();
+            // cartProduct.DisplayProductInCart();
+            /*
+            storingProduct.pushback(cartProduct);
+            */
         }
+       
+            // for(unsigned int i = 0; i < size ;i++)
+            // {
+                    //have to change the get date time to small part
+            // }
+        
+
+
     }
     
 

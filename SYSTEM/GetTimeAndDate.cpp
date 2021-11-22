@@ -13,7 +13,7 @@ private:
 	//errno_t e = ctime_s(s, 50, &t);
 	int e = ctime_s(systemTime, 30, &now);
 public:
-
+//have to change the get date time to small part
 	GetTimeAndDate() {}
 	~GetTimeAndDate() {}
 	char* GetDate()

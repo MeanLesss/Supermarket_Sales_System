@@ -68,7 +68,7 @@ public:
 	{
 		return total;
 	}
-	char * getDateAndTime()
+	char * getDate()
 	{
 		return dateTime;
 	}
