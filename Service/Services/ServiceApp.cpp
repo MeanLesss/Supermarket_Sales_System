@@ -20,7 +20,7 @@ private:
 	char Password[20];
 	char dateTime[50];
 	char loginmenu;
-	bool loggedIn;
+	int loggedIn;
 
 public:
 

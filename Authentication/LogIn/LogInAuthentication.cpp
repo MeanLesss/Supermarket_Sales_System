@@ -2,20 +2,23 @@
 #include<iostream>
 #include<fstream>
 #include "../../Account/AccountUser.cpp"
+#include "../../Cashier/Cashier.cpp"
+#include "../../Manager/Manager.cpp"
 
 class LogInAuthentication 
 {
 private:
     AccountUser account;
 
-    bool count,loggedIn;
+    int count,loggedIn;
+    char role[20];
 
 public:
 	LogInAuthentication():count(0),loggedIn(0) {}
     ~LogInAuthentication() {}
 	//log in
 
-    bool authenticateUser(char username[], char password[])
+    int authenticateUser(char username[], char password[])
     {
         ifstream fin;
         fin.open("user.dat", ios::in | ios::binary);
@@ -26,14 +29,25 @@ public:
             {
                 if (account.getRole() == "manager")
                 {
-                    loggedIn = true;
+                    loggedIn = 1;
                     count = true;
+                    memcpy(this->role, "manager", 8);
+                    Manager manager(account.getUserName(), account.getPassWord(), role);
+                    cout << "\t\t\t\tLogged in as :" << endl;
+                    manager.DisplayManager();
+                    fin.close();
                     break;
                 }
                 if (account.getRole() == "cashier")
                 {
-                    loggedIn = false;
+                    loggedIn = 2;
+
                     count = true;
+                    memcpy(this->role, "cashier", 8);
+                    Cashier cashier(account.getUserName(), account.getPassWord(), role);
+                    cout << "\t\t\t\tLogged in as :" << endl;
+                    cashier.DisplayCashier();
+                    fin.close();
                     break;
                 }
             }
@@ -42,12 +56,10 @@ public:
         fin.close();
         if (count == false)
         {
-            cout << "\t\t\t\t=======================================" << endl;
-            cout << "\t\t\t\t||  Incorrect password or username!  ||" << endl;
-            cout << "\t\t\t\t=======================================" << endl;
-            system("pause");
+            loggedIn = 3;
         }
         return loggedIn;
+        
     }
 
 };

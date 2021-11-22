@@ -84,8 +84,13 @@ public:
 		}
 		
 
-		cout << "+ " << ProductNo << ".\t||  " << ProductName << "\t\t\t$" << Price << "\t\t " << quantity << "pcs\t\t " << Discount << "%\t\t" << "total : $" << total << endl;
-		//cout << "+ " << right << ProductNo << setw(4) << "||" << ProductName << setw(15) << "||$" << price << setw(20) << "||" << quantity << "pcs" << setw(15) << "||" << Discount << "%" << setw(25) << " ||total : $" << total << endl;
+		//cout << "+ " << ProductNo << ".\t||  " << ProductName << "\t\t\t$" << Price << "\t\t " << quantity << "pcs\t\t " << Discount << "%\t\t" << "total : $" << total << endl;
+		cout << "+ " << left << ProductNo << setw(4) << "||" 
+			 << ProductName << setw(15) << "||$" 
+			 << Price << setw(20) << "||" 
+			 << quantity << "pcs" << setw(15) << "||" 
+			 << Discount << "%" << setw(25) << " ||total : $" 
+			 << total << endl;
 
 	}
 

@@ -22,30 +22,29 @@ public:
 	~LogInService() {}
 
 
-	void UserType(bool loggedIn)
+	void UserType(int loggedIn)
 	{
 		ifstream fin;
 		fin.open(USER_FILE, ios::in | ios::binary);
 		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
 		{
-			if (loggedIn == true)
+			if (loggedIn == 1)
 			{
-				memcpy(this->role, "manager", 8);
-				
-				manager = Manager(account.getUserName() , account.getPassWord(), role);
-				cout << "\t\t\t\tLogged in as :" << endl;
-				manager.DisplayManager();
-				fin.close();
 				ManService.LogInAsManager();
+				break;
+			}
+			if(loggedIn == 2)
+			{
+				CashService.LogInAsCashier();
+				break;
 			}
 			else
 			{
-				memcpy(this->role, "cashier", 8);
-				Cashier cashier(account.getUserName(), account.getPassWord(), role);
-				cout << "\t\t\t\tLogged in as :" << endl;
-				cashier.DisplayCashier();
-				fin.close();
-				CashService.LogInAsCashier();
+				cout << "\t\t\t\t=======================================" << endl;
+				cout << "\t\t\t\t||  Incorrect password or username!  ||" << endl;
+				cout << "\t\t\t\t=======================================" << endl;
+				system("pause");
+				break;
 			}
 		}
 
