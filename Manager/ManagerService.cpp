@@ -30,7 +30,7 @@ public:
 			optMain = _getche();
 			switch (optMain)//option for manager menu
 			{
-			case'1'://option in manager menu
+			case '1'://option in manager menu
 				do
 				{
 					system("cls");
