@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string.h>
+#include<vector>
 #include<conio.h>
 #include<iomanip>
 #include "../../SYSTEM/GetTimeAndDate.cpp"
@@ -35,17 +36,14 @@ public:
 	CartProduct(char ProductName[20], int ProductNo, float Price, int quantity, float Discount,float total)
 	{
 		memcpy(this->ProductName, ProductName, 20);
-		memcpy(this->dateTime, "unknown", 50);
+		memcpy(this->dateTime, "unknown", 30);
 		this->ProductNo = ProductNo;
 		this->Price = Price;
 		this->quantity = quantity;
 		this->Discount = Discount;
 		this->total = total;
 	}
-	cartProduct(char dateTime[],vector<CartProduct> storingProduct)
-	{
-
-	}
+	
 	~CartProduct() {}
 
 	int getID()
@@ -67,6 +65,14 @@ public:
 	float getTotal()
 	{
 		return total;
+	}
+	float getPrice()
+	{
+		return Price;
+	}
+	float getDiscount()
+	{
+		return Discount;
 	}
 	char * getDate()
 	{
@@ -93,12 +99,13 @@ public:
 		
 
 		//cout << "+ " << ProductNo << ".\t||  " << ProductName << "\t\t\t$" << Price << "\t\t " << quantity << "pcs\t\t " << Discount << "%\t\t" << "total : $" << total << endl;
-		cout << "+ " << left << ProductNo << setw(4) << "||" 
-			 << ProductName << setw(15) << "||$" 
-			 << Price << setw(20) << "||" 
-			 << quantity << "pcs" << setw(15) << "||" 
-			 << Discount << "%" << setw(25) << " ||total : $" 
-			 << total << endl;
+		cout << "__________________________________________________________________________________________________" << endl;
+		cout << "+ " << left << ProductNo << setw(10) << right << "|" 
+			 << left << ProductName << setw(20) <<right << "$" 
+			 << Price << setw(20)
+			 << right << quantity << "pcs" << setw(18)<< left 
+			 << right << Discount << "%" << setw(15)<< right << "|total : $" 
+			 << left << total << endl;
 
 	}
 

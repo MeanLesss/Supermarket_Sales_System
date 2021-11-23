@@ -8,14 +8,12 @@
 
 -add README to github	[done]
 
--recheck overload memory from classes	 [not yet]
+-fix product display [done]
 
 -fix the date and time [not yet]
 
 -write date and time to file [not yet]
 
--fix product display [not yet]
-
 -add time and date to CartProuct [not yet]
 
-//have to change the get date time to small part
+//have to change the get date time to small part [not yet]

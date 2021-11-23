@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string>
 #include<conio.h>
+#include<iomanip>
 using namespace std;
 
 class Menu
@@ -13,8 +14,12 @@ public:
 
 	void DisplayProductHeader()
 	{
-		cout << "==================================================================================================" << endl;
-		cout << "|| ID\t|| product name\t\t\t||price\t\t|| quantity\t\t|| Discount\t||" << endl;
+		cout << "_____________________________________________________________________________________" << endl;
+		cout << "|+ " << left << "ID" << setw(10) << right << "|"
+			<< right << "Product name" << setw(15) << right 
+			<< "Price" << setw(22)
+			<< right << "Quantity"  << setw(20) << left
+			<< right << "Discount"  << setw(15) << left << "|" << endl;
 	}
 
 	void DisplayLogInMenu()

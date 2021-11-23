@@ -24,7 +24,7 @@ public:
 	{
 		unsigned int size = storingProduct.size();
 
-		memcpy(this->dateTime, dateAndTime.GetDate(), 50);
+		memcpy(this->dateTime, dateAndTime.getDateAndTime(), 50);
 
 		cout << "Date & Time : " << dateTime << endl;
 		cout << "===========================================================================================================" << endl;

@@ -22,15 +22,17 @@ private:
 	
 	vector<CartProduct> storingProduct;
 	vector<Report> storingForReport;
+	vector<int> tempQuantity;
+	
 
 	char productName[20];
+	unsigned int sizeTemp = tempQuantity.size();
 	unsigned int size;
 	int count = 0;//use as a error detector in after search
 	int countDelete = 0;
 	char option;
 	int id;
 	int quantity;
-	int tempQuantity;
 	int No;// to set product No to the product in vector
 	float Price;
 	float Discount;
@@ -76,24 +78,22 @@ public:
 				{
 					system("cls");
 					cout << "Product ADDED!!" << endl;
-					memcpy(this->dateTime,dateAndTime.GetDate(),30);
+					memcpy(this->dateTime,dateAndTime.getDateAndTime(),30);
 					cout << dateTime << endl;
+
 					Price = product.getPrice();
 					Discount = product.getDis();
 					memcpy(this->productName, product.getName(), 20);
 					cartProduct = CartProduct(productName, id, Price, quantity, Discount);
-					
 					storingProduct.push_back(cartProduct);//push carted product to vector
-		
-					//storingForReport.push_back(cartReport);
 
 					PrintAddedProduct(storingProduct);
 					count++;
 					fin.close();
 
-					/*tempQuantity = product.getQuantity();
-					quantity = tempQuantity - quantity;
-					UpdateStock(product.getName(), id, Price, quantity, Discount);*///Update the quantity of the product
+					tempQuantity.push_back(product.getQuantity());
+					quantity = product.getQuantity() - quantity;
+					UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product
 					break;
 				}
 				No++;
@@ -136,20 +136,31 @@ public:
 				PrintAddedProduct(storingProduct);
 				countDelete = 0;
 				//cout << "Enter ID to REMOVE item : "; cin >> id;
-
+				
 				cout << "Sorry this feature will available in the next update!"<<endl;
 
 				//cout << "Item REMOVED" << endl;
+
+				//PrintAddedProduct(storingProduct);
+
 				//option = '4';
 				system("pause");
 				system("cls");
 				break;
 
 			case '4':
-				quantity = tempQuantity;
-				UpdateStock(product.getName(), id, Price, quantity, Discount);//Update the quantity of the product
-				storingProduct.clear();
+				for (unsigned int i = 0; i < size; i++)
+				{
+					quantity = tempQuantity[i];
+					Price = storingProduct[i].getPrice();
+					Discount = storingProduct[i].getDiscount();
+					memcpy(this->productName, storingProduct[i].getName(), 20);
+					id = storingProduct[i].getID();
 
+					UpdateStock(productName, id, Price, quantity, Discount);//Update the quantity of the product
+				}
+				tempQuantity.clear();
+				storingProduct.clear();
 				break;
 			case '0':
 				exit(1);

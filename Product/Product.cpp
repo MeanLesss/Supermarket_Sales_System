@@ -4,6 +4,7 @@
 #include<fstream>
 #include<vector>
 #include<stdio.h>
+#include<iomanip>
 using namespace std;
 
 class Product
@@ -84,16 +85,12 @@ public:
 
 	void DisplayProduct()
 	{
-		
-		cout << "==================================================================================================" << endl;
-		cout << "|| " << ProductNo << ".\t||  " << ProductName << "\t\t\t||$" << Price << "\t\t|| " << Quantity << "pcs\t\t|| " << Discount << "%\t\t||" << endl;
-		cout << "==================================================================================================" << endl;
-		//cout << "_______________________________________________________________________________"<< endl;
-		// cout << "|+ " << right << ProductNo << setw(4) << "||" 
-		// 	 << ProductName << setw(15) << "||$" 
-		// 	 << Price << setw(20) << "||" 
-		// 	 << quantity << "pcs" << setw(15) << "||" 
-		// 	 << Discount << "%|" << setw(25) <<endl;
+		cout << "_____________________________________________________________________________________"<< endl;
+		 cout << "|+ " << left << ProductNo << setw(10) << right << "|" 
+		 	 << left << ProductName << setw(20) << right << "$" 
+		 	 << Price << setw(20) 
+		 	 << right << Quantity << "pcs" << setw(18) << left 
+		 	 << right << Discount << "%" << setw(15) << left <<"|" << endl;
 	
 	}
 

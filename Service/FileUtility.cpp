@@ -250,7 +250,7 @@ public:
         {
             if(fin.eof()) { break;}
             // cartProduct.DisplayDateFromReport();
-            // cartProduct.DisplayProductInCart();
+            cartProduct.DisplayProductInCart();
             /*
             storingProduct.pushback(cartProduct);
             */

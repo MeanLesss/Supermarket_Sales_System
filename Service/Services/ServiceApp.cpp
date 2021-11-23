@@ -30,7 +30,8 @@ public:
 
 	void MenuProcess()
 	{
-		memcpy(this->dateTime, dateAndTime.GetDate(), 50);
+		memcpy(this->dateTime, dateAndTime.getDateAndTime(), 50);
+		//dateAndTime.getDays();
 		do
 		{
 			system("cls");

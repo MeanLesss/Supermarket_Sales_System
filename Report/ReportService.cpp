@@ -30,15 +30,8 @@ public:
 	{
 		fileIO.OpenDataFromFile(REPORT_FILE);
 
-		for (int i = 0; i < 10; i++)
-		{
-			cout << "report" << i << endl;
-			for (int j = i ; j <= i ; j++)
-			{
-				fileIO.ReadDataFromReport();
-			}
-
-		}
+		fileIO.ReadDataFromReport();
+		
 		/*
 
 		*/
