@@ -63,8 +63,8 @@ public:
 
 	void DisplayCashier()
 	{
-		cout << "\t\t\t\tUsername : " << CashierName << endl;
-		cout << "\t\t\t\tPassword : " << CashierPass << endl;
-		cout << "\t\t\t\tRole : " << role << endl;
+		cout << "\t\t\t\tUsername : " << CashierName 
+			 << "\t\tPassword : " << CashierPass
+		   	 << "\t\tRole : " << role << endl;
 	}
 };

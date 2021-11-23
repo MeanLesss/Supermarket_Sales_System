@@ -51,9 +51,9 @@ public:
 	}
 	void DisplayManager()
 	{
-		cout << "\t\t\t\tUsername : " << ManagerName << endl;
-		cout << "\t\t\t\tPassword : " << ManagerPass << endl;
-		cout << "\t\t\t\tRole : " << role << endl;
+		cout << "\t\t\t\tUsername : " << ManagerName 
+		     << "\t\tPassword : " << ManagerPass 
+		     << "\t\tRole : " << role << endl;
 	}
 	
 

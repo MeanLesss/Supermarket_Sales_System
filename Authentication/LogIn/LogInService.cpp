@@ -24,30 +24,22 @@ public:
 
 	void UserType(int loggedIn)
 	{
-		ifstream fin;
-		fin.open(USER_FILE, ios::in | ios::binary);
-		while (fin.read(reinterpret_cast<char*>(&account), sizeof(AccountUser)))
-		{
-			if (loggedIn == 1)
-			{
-				ManService.LogInAsManager();
-				break;
-			}
-			if(loggedIn == 2)
-			{
-				CashService.LogInAsCashier();
-				break;
-			}
-			else
-			{
-				cout << "\t\t\t\t=======================================" << endl;
-				cout << "\t\t\t\t||  Incorrect password or username!  ||" << endl;
-				cout << "\t\t\t\t=======================================" << endl;
-				system("pause");
-				break;
-			}
-		}
 
+		if (loggedIn == 1)
+		{
+			ManService.LogInAsManager();
+		}
+		if (loggedIn == 2)
+		{
+			CashService.LogInAsCashier();
+		}
+		if(loggedIn == 3)
+		{
+			cout << "\t\t\t\t=======================================" << endl;
+			cout << "\t\t\t\t||  Incorrect password or username!  ||" << endl;
+			cout << "\t\t\t\t=======================================" << endl;
+			system("pause");
+		}
 	}
 
 };
